@@ -1,0 +1,198 @@
+@import "../../../styles";
+
+$width-menu: 170px;
+
+.offset {
+  margin-left: 104px;
+  padding: 100px 15px 0 0;
+
+}
+
+header {
+  position: fixed;
+  background-color: transparent;
+  width: 100%;
+  border: 1px solid red;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+    z-index: 1299;
+  a.logo {
+  margin-left: 100px;
+  color:white;
+
+  }
+  .menu-right {
+  }
+  .hamburger {
+    font-size: 2.5em;
+
+  }
+}
+
+
+
+///////////////////////////
+
+.nav {
+  height: 100%;
+  position: fixed;
+  left: -10px;
+  top: 0;
+  z-index: 1000;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.icon {
+  position: absolute;
+  //left: 63px;
+  width: 350px;
+  top: 0;
+  z-index: 980;
+  height: 100%;
+  background:hsla(0,0%,15%,1);
+  //background: $brand-primary;
+  border-right: 1px solid hsla(0, 0%, 0%, .3);
+  //transition: transform .24s linear;
+  backface-visibility: hidden;
+  transform-origin: left;
+  //transform: perspective(1000px) rotateY(90deg);
+  & li:first-child {
+    margin-top: 90px;
+  }
+  & li {
+    border-bottom: 1px solid hsla(0, 0%, 0%, .3);
+    list-style-type: none;
+  }
+
+  & a {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    font-size: 1.6em;
+    color: hsla(0, 0%, 60%, 1);
+    text-shadow: 0 1px 0 hsla(0, 0%, 0%, 1);
+    transition: all .5s ease-out;
+
+    &:hover {
+      color: hsla(255, 255%, 255%, 1);
+      transform: translateX(10px) scale(1.2);
+
+    }
+    span {
+      text-indent: 1em;
+      font-size: 1.4em;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: all .5s ease;
+      &:hover {
+        color: hsla(255, 255%, 255%, 1);
+        transform: translateX(-34px)
+      }
+    }
+
+  }
+}
+
+.nav:hover .icon {
+  //transform: rotateY(0deg)
+}
+
+.text {
+
+
+  & li {
+    border-bottom: 1px solid hsla(0, 0%, 0%, .3);
+  }
+  & a {
+
+
+  }
+}
+
+//.nav:hover .info {
+//  left: 0;
+//  opacity: 1;
+//  transition: opacity .5s ease-in .1s
+//}
+
+.info {
+  position: absolute;
+  padding-left: 2em;
+  bottom: 30px;
+  z-index: 999;
+  width: 264px;
+  color: hsla(255, 255%, 255%, 1);
+  text-align: center;
+  line-height: 1.6;
+  opacity: 1;
+
+  .logo p {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background:hsla(0,0%,15%,1);
+    //background: $brand-primary;
+    color: hsla(0, 0%, 26%, 1);
+    opacity: .6;
+    overflow: hidden;
+    text-align: center;
+    transition: all .5s ease;
+    font-size: 2em;
+    text-shadow: -1px -1px hsla(0, 0%, 31%, 1), 1px 1px hsla(0, 0%, 7%, 1);
+
+    &:hover {
+      opacity: 1;
+      color: hsla(255, 255%, 255%, 1);
+      text-shadow: -1px -1px hsla(0, 0%, 34%, 1),
+      1px 1px hsla(0, 0%, 7%, 1);
+    }
+  }
+  .name {
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: hsla(0, 0%, 26%, 1);
+    text-shadow: -1px -1px hsla(0, 0%, 31%, 1),
+    1px 1px hsla(0, 0%, 7%, 1);
+  }
+  .quote {
+    color: #444;
+    text-shadow: 1px 1px hsla(0, 0%, 7%, 1);
+  }
+  .social a {
+    font-size: 2em;
+    color: hsla(0, 0%, 20%, 1);
+    letter-spacing: .5em;
+    text-shadow: 1px 1px hsla(0, 0%, 27%, 1),
+    -1px -1px hsla(0, 0%, 7%, 1);
+    transition: all .5s ease;
+
+    &:hover {
+      color: hsla(255, 255%, 255%, 1);
+      text-shadow: -1px -1px hsla(0, 0%, 34%, 1),
+      1px 1px hsla(0, 0%, 7%, 1);
+    }
+  }
+}
+
+/*
+Only added a nav query for height bc width is fine
+(covers full width of viewport from 270px) down to 220px.
+Bottom nav info section is hidden when screen height
+hits 550px or below.  Nav still functions as a fly-out
+*/
+
+@media screen and (max-height: 550px) {
+  .info {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 7.5vw;
+  }
+}

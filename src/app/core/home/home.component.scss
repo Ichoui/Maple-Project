@@ -1,0 +1,11 @@
+#banff-bg {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 2500px;
+  min-height: 1080px;
+  z-index: -1;
+}
+
+
+// media query banff-bg quand 1280, quand 1080, tablette et iphone; en % bottom négatif
