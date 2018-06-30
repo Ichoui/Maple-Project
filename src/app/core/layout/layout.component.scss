@@ -38,6 +38,17 @@ header {
   }
 }
 
+.overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  height: 100%;
+  width:100%;
+  background-color: rgba(1,1,1,0.6);
+  z-index: 500;
+}
+
 ///////////////////////////
 
 .nav {
@@ -50,11 +61,11 @@ header {
   perspective: 1000px;
 }
 
-$menu-bg: 1px solid hsla(0, 0%, 0%, .3);
-$menu-txt: hsla(0, 0%, 60%, 1);
 .icon {
   position: absolute;
   width: $width-menu;
+  box-shadow: 3px 2px 12px 0px rgba(0,0,0,0.4);
+
   top: 0;
   z-index: 980;
   height: 100%;
