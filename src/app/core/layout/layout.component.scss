@@ -38,6 +38,7 @@ header {
     margin-right: 10px;
     align-items: center;
     width: 150px;
+    cursor: pointer;
     margin-top: 10px;
     .text-burger {
       display: block;
@@ -45,15 +46,15 @@ header {
       border-radius: 100px;
       color: #fff;
       line-height: 15px;
-      padding: 15px 70px 10px 15px;
+      padding: 15px 70px 11px 15px;
       margin-right: -70px;
       -webkit-transition: all 0.3s;
       -o-transition: all 0.3s;
       transition: all 0.3s;
     }
     .burger {
-      cursor: pointer;
       margin-left: 20px;
+      overflow: hidden;
       .line {
         width: 30px;
         height: 4px;
@@ -68,6 +69,9 @@ header {
   }
 }
 
+.extend-burger {
+  padding: 15px 75px 11px 15px !important;
+}
 .overlay {
   position: absolute;
   top: 0;

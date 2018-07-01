@@ -21,13 +21,18 @@ export class LayoutComponent implements OnInit {
       this.state = (this.state === 'open' ? 'close' : 'open');
         const overlay = document.getElementById('overlay');
         const burger = document.getElementById('hamburger-1');
+        const burgertext = document.getElementById('text-b');
       if (this.state === 'open') {
         overlay.classList.add('overlay');
         burger.classList.add('is-active');
+        burgertext.classList.add('extend-burger');
+        burgertext.innerHTML = 'CLOSE';
 
       } else {
         overlay.classList.remove('overlay');
         burger.classList.remove('is-active');
+        burgertext.classList.remove('extend-burger');
+        burgertext.innerHTML = 'MENU';
       }
   }
 
