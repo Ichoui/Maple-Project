@@ -59,13 +59,13 @@ header {
   z-index: 1000;
   transform-style: preserve-3d;
   perspective: 1000px;
+  overflow-x: initial;
 }
 
 .icon {
   position: absolute;
   width: $width-menu;
   box-shadow: 3px 2px 12px 0px rgba(0,0,0,0.4);
-
   top: 0;
   z-index: 980;
   height: 100%;

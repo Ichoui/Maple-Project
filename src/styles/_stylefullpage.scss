@@ -1,6 +1,11 @@
 * {
   margin: 0;
   font-size: 1em;
+  font-family: $monaco;
+  overflow-x: hidden;
+}
+h1, h2, h3 {
+  font-family: $helvetica;
 }
 
 li {

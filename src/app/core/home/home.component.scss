@@ -7,5 +7,15 @@
   z-index: -1;
 }
 
+@media screen and (max-width: 1280px) {
+  #banff-bg {
+    width: 1920px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #banff-bg {
+    bottom: -50px;
+  }
+}
 
 // media query banff-bg quand 1280, quand 1080, tablette et iphone; en % bottom négatif

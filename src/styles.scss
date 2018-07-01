@@ -3,9 +3,11 @@
 @import '~font-awesome/scss/_variables.scss';
 $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome.scss';
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 
-@import "styles/colors";
+@import "styles/fonts";
+@import "styles/variables";
 @import "styles/stylefullpage";
 @import "styles/icomoon";
 
