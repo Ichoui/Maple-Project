@@ -1,23 +1,28 @@
 <header class="menu-header">
   <img src="assets/images/Logo_black.jpg" class="logo" alt="Ichoui Logo">
   <div class="menu-right">
-    <div (click)="toggleMenu()" class="hamburger">
-      <i class="fa fa-bars"></i>
+    <div class="block-burger" (click)="toggleMenu()">
+      <div class="text-burger">Menu</div>
+      <div class="burger" id="hamburger-1">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
     </div>
   </div>
 </header>
 <section [@rotateAnimation]='state' id="nav" class="nav">
   <div class="icon">
     <menu class="">
-      <li>
-        <a [routerLink]="['/home']" routerLinkActive="active-route"><i class="fa fa-home"></i><span>Home</span></a>
+      <li [routerLink]="['/home']" routerLinkActive="active-route">
+        <a><i class="fa fa-home"></i><span>Home</span></a>
       </li>
-      <li>
-        <a [routerLink]="['/velib']" routerLinkActive="active-route"><i
-          class="fa fa-bicycle"></i><span>Vélo'Toulouse</span></a>
+      <li [routerLink]="['/velib']" routerLinkActive="active-route">
+        <a>
+          <i class="fa fa-bicycle"></i><span>Vélo'Toulouse</span></a>
       </li>
-      <li>
-        <a [routerLink]="['/jump']" routerLinkActive="active-route"><i class="fa fa-cloud"></i><span>Jump</span></a>
+      <li [routerLink]="['/jump']" routerLinkActive="active-route">
+        <a><i class="fa fa-cloud"></i><span>Jump</span></a>
       </li>
     </menu>
   </div>

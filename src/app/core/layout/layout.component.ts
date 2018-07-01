@@ -19,11 +19,15 @@ export class LayoutComponent implements OnInit {
   state: string = 'close'; // passer à close
   toggleMenu() {
       this.state = (this.state === 'open' ? 'close' : 'open');
-        const $overlay = document.getElementById('overlay');
+        const overlay = document.getElementById('overlay');
+        const burger = document.getElementById('hamburger-1');
       if (this.state === 'open') {
-        $overlay.classList.add('overlay');
+        overlay.classList.add('overlay');
+        burger.classList.add('is-active');
+
       } else {
-        $overlay.classList.remove('overlay');
+        overlay.classList.remove('overlay');
+        burger.classList.remove('is-active');
       }
   }
 

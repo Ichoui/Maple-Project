@@ -33,12 +33,38 @@ header {
   }
   .menu-right {
   }
-  .hamburger {
-    position: absolute;
-    font-size: 2.5em;
-    color: white;
-    right: 10px;
-
+  .block-burger {
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+    width: 150px;
+    margin-top: 10px;
+    .text-burger {
+      display: block;
+      background-color: $menu-top-right;
+      border-radius: 100px;
+      color: #fff;
+      line-height: 15px;
+      padding: 15px 70px 10px 15px;
+      margin-right: -70px;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    .burger {
+      cursor: pointer;
+      margin-left: 20px;
+      .line {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        display: block;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+    }
   }
 }
 
@@ -64,6 +90,7 @@ header {
   transform-style: preserve-3d;
   perspective: 1000px;
   overflow-x: initial;
+  font-family: $helvetica;
 }
 
 .icon {
@@ -73,36 +100,39 @@ header {
   top: 0;
   z-index: 980;
   height: 100%;
-  background: hsla(0, 0%, 15%, 1);
+  background: $menu-bg;
   //background: $brand-primary;
   border-right: $menu-bg;
   backface-visibility: hidden;
   transform-origin: left;
+
   & li:first-child {
     margin-top: 120px;
   }
   & li {
-    border-top: 1px solid $menu-bg;
     list-style-type: none;
+    &:hover {
+      outline: none;
+      cursor: pointer;
+    }
     & a {
-      width: 64px;
-      height: 64px;
       line-height: 64px;
       text-align: center;
       color: $menu-txt;
       text-shadow: 0 1px 0 hsla(0, 0%, 0%, 1);
-      transition: all .5s ease;
       i {
+        transition: all .5s ease;
         font-size: 2.5em;
-      }
-      &:hover {
-        color: hsla(255, 255%, 255%, 1);
-        transform: translateX(20px) scale(1.2);
+        padding-top: 10px;
+        &:hover {
+          color: hsla(255, 255%, 255%, 1);
+          transform: translateX(5px) scale(1.2);
+        }
       }
       span {
         position: absolute;
         left: 120px;
-        font-size: 1.6em;
+        font-size: 1.4em;
         text-decoration: none;
         transition: all .5s ease;
         text-align: left;
@@ -168,6 +198,24 @@ Bottom nav info section is hidden when screen height
 hits 550px or below.  Nav still functions as a fly-out
 */
 
+#hamburger-1.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(9px) rotate(45deg);
+  -ms-transform: translateY(9px) rotate(45deg);
+  -o-transform: translateY(9px) rotate(45deg);
+  transform: translateY(9px) rotate(45deg);
+}
+
+#hamburger-1.is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-9px) rotate(-45deg);
+  -ms-transform: translateY(-9px) rotate(-45deg);
+  -o-transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-9px) rotate(-45deg);
+}
+
 @media screen and (max-height: 550px) {
   .info {
     display: none;
@@ -176,8 +224,8 @@ hits 550px or below.  Nav still functions as a fly-out
 
 @media screen and (max-width: 414px) and (max-height: 736px) {
   .logo {
-  margin:0 auto !important;
-    padding-left:34px;
+    margin: 0 auto !important;
+    padding-left: 34px;
   }
   .icon {
     width: $width-menu-responsive;
