@@ -41,7 +41,7 @@ header {
     cursor: pointer;
     margin-top: 10px;
     .text-burger {
-      display: block;
+      //display: block;
       background-color: $menu-top-right;
       border-radius: 100px;
       color: #fff;
@@ -55,10 +55,14 @@ header {
     .burger {
       margin-left: 20px;
       overflow: hidden;
+      background-color: white;
+      opacity:1;
+      border-radius: 50%;
+      padding: 10px;
       .line {
         width: 30px;
-        height: 4px;
-        background-color: white;
+        height: 3px;
+        background-color: $menu-top-right;
         display: block;
         margin: 5px auto;
         -webkit-transition: all 0.3s ease-in-out;
@@ -207,10 +211,10 @@ hits 550px or below.  Nav still functions as a fly-out
 }
 
 #hamburger-1.is-active .line:nth-child(1) {
-  -webkit-transform: translateY(9px) rotate(45deg);
-  -ms-transform: translateY(9px) rotate(45deg);
-  -o-transform: translateY(9px) rotate(45deg);
-  transform: translateY(9px) rotate(45deg);
+  -webkit-transform: translateY(7px) rotate(45deg);
+  -ms-transform: translateY(7px) rotate(45deg);
+  -o-transform: translateY(7px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 #hamburger-1.is-active .line:nth-child(3) {
