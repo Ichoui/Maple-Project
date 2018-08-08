@@ -40,5 +40,4 @@ testem.log
 Thumbs.db
 
 *.mp4
-/images/
-/images
+

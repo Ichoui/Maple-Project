@@ -1,40 +1,45 @@
-#banff-bg {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 2500px;
-  min-height: 1080px;
-  z-index: -1;
-}
 
-@media screen and (max-width: 1280px) {
-  #banff-bg {
-    width: 1920px;
-    bottom: -60px;
-  }
-}
 
-// iPad
-@media screen and (max-width: 768px) and (max-height: 1024px) {
+.old {
+
   #banff-bg {
+    position: fixed;
+    left: 0;
     bottom: 0;
+    width: 2500px;
+    min-height: 1080px;
+    z-index: -1;
   }
-}
 
-// iPhone 7 Plus
-@media screen and (max-width: 414px) and (max-height: 736px) {
-  #banff-bg {
-    left: -120px;
-    width: 1500px;
-    bottom: -180px;
+  @media screen and (max-width: 1280px) {
+    #banff-bg {
+      width: 1920px;
+      bottom: -60px;
+    }
   }
-}
 
-// Quand on n'est pas en 768 et +
-@media screen and (max-height: 660px) {
-  #banff-bg {
-    bottom: -162px;
+  // iPad
+  @media screen and (max-width: 768px) and (max-height: 1024px) {
+    #banff-bg {
+      bottom: 0;
+    }
   }
-}
 
-// media query banff-bg quand 1280, quand 1080, tablette et iphone; en % bottom négatif
+  // iPhone 7 Plus
+  @media screen and (max-width: 414px) and (max-height: 736px) {
+    #banff-bg {
+      left: -120px;
+      width: 1500px;
+      bottom: -180px;
+    }
+  }
+
+  // Quand on n'est pas en 768 et +
+  @media screen and (max-height: 660px) {
+    #banff-bg {
+      bottom: -162px;
+    }
+  }
+
+  // media query banff-bg quand 1280, quand 1080, tablette et iphone; en % bottom négatif
+}

@@ -1,14 +1,9 @@
 @import "../../../styles";
 
-$width-menu: 350px;
+$width-menu: 300px;
 $width-menu-responsive: 425px;
 
-.offset {
-  margin-left: 104px;
-  padding: 100px 15px 0 0;
-}
-
-header {
+#header {
   position: fixed;
   background-color: transparent;
   width: 100%;
@@ -16,22 +11,23 @@ header {
   display: flex;
   justify-content: space-between;
   z-index: 1299;
+  box-shadow: 3px 2px 12px 0 rgba(0,0,0,0.4);
+  transition: all 0.5s ease-in-out;
   a.logo {
     margin-left: 100px;
     color: white;
   }
   .logo {
-    width: 250px;
-    height: auto;
+    width: 200px;
+    height: 65px;
     margin-left: 45px;
+    margin-top: 5px;
     opacity: .6;
     transition: all .5s ease;
     &:hover {
       opacity: 1;
       color: hsla(255, 255%, 255%, 1);
     }
-  }
-  .menu-right {
   }
   .block-burger {
     display: flex;
@@ -73,6 +69,10 @@ header {
   }
 }
 
+.shadw {
+  box-shadow: none !important;
+  transition: all 0.3s ease-in-out;
+}
 .extend-burger {
   padding: 15px 75px 11px 15px !important;
 }

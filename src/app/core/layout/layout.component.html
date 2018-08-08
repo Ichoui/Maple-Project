@@ -1,4 +1,4 @@
-<header class="menu-header">
+<header id="header" class="menu-header">
   <img src="assets/images/Logo_black.jpg" class="logo" alt="Ichoui Logo">
   <div class="menu-right">
     <div class="block-burger" (click)="toggleMenu()">
@@ -14,14 +14,18 @@
 <section [@rotateAnimation]='state' id="nav" class="nav">
   <div class="icon">
     <menu class="">
-      <li [routerLink]="['/home']" routerLinkActive="active-route">
+      <li [routerLink]="['/home']" routerLinkActive="active-route" (click)="toggleMenu()">
         <a><i class="fa fa-home"></i><span>Home</span></a>
       </li>
-      <li [routerLink]="['/velib']" routerLinkActive="active-route">
+      <!--<li [routerLink]="['/velib']" routerLinkActive="active-route">-->
+        <!--<a>-->
+          <!--<i class="fa fa-bicycle"></i><span>Vélo'Toulouse</span></a>-->
+      <!--</li>-->
+      <li [routerLink]="['/velib']" routerLinkActive="active-route" (click)="toggleMenu()">
         <a>
-          <i class="fa fa-bicycle"></i><span>Vélo'Toulouse</span></a>
+          <i class="fa fa-bicycle"></i><span>Suelename</span></a>
       </li>
-      <li [routerLink]="['/jump']" routerLinkActive="active-route">
+      <li [routerLink]="['/jump']" routerLinkActive="active-route" (click)="toggleMenu()">
         <a><i class="fa fa-cloud"></i><span>Jump</span></a>
       </li>
     </menu>
@@ -39,7 +43,9 @@
 </section>
 
 <section class="offset container">
+  <div class="machin">
   <router-outlet></router-outlet>
+  </div>
 </section>
 
 <div id="overlay"></div>
