@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { JumpComponent } from './jump/jump.component';
 import { VelibComponent } from './velib/velib.component';
+import {SuelenameComponent} from "./suelename/suelename.component";
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'velib',
         component: VelibComponent
+      },
+      {
+        path: 'suelename',
+        component: SuelenameComponent
       }
     ]
   },

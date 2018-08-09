@@ -7,6 +7,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { JumpComponent } from './jump/jump.component';
 import { VelibComponent } from './velib/velib.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { SuelenameComponent } from './suelename/suelename.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { NotfoundComponent } from './notfound/notfound.component';
   exports: [
     CoreRoutingModule
   ],
-  declarations: [HomeComponent, LayoutComponent, JumpComponent, VelibComponent, NotfoundComponent]
+  declarations: [HomeComponent, LayoutComponent, JumpComponent, VelibComponent, NotfoundComponent, SuelenameComponent]
 })
 export class CoreModule { }
