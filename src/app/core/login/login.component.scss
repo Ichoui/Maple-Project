@@ -1,0 +1,58 @@
+@import "../../../styles";
+
+.logo {
+  width: 200px;
+  height: 65px;
+  margin-top: 8vh;
+  opacity: .6;
+  transition: all .5s ease;
+  text-align: center;
+  &:hover {
+    opacity: 1;
+    color: hsla(255, 255%, 255%, 1);
+  }
+}
+h1 {
+  margin: 10px 0;
+  text-align: center;
+}
+form {
+  position: relative;
+  height: 37.5vh;
+  width: 20vw;
+  background: rgba(240,240,240,0.4);
+  border-radius: 5px;
+  margin: 30px auto;
+  display:flex;
+  flex-direction: column;
+  label {
+    display:none;
+  }
+  input {
+    border:1px black solid;
+    width: 90%;
+    text-align: center;
+    height: 5vh;
+    margin: 10px auto;
+  }
+  a {
+    width: 50%;
+    background-color: $brand-bluegray;
+    color:black;
+    margin:20px auto;
+      border: none;
+    &:hover {
+      outline: none;
+    }
+  }
+  .icon-home {
+   font-size: 1.5em;
+    position: absolute;
+    bottom: 2px;
+    left:2px;
+    &:hover {
+      color:white;
+      cursor:pointer;
+    }
+  }
+}

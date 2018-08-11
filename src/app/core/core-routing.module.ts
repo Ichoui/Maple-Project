@@ -9,7 +9,10 @@ import { SuelenameComponent } from './suelename/suelename.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   {
     path: '',
     component: LayoutComponent,
@@ -34,10 +37,6 @@ const routes: Routes = [
       {
         path: 'suelename',
         component: SuelenameComponent
-      },
-      {
-        path: 'login',
-        component: LoginComponent,
       }
     ]
   },

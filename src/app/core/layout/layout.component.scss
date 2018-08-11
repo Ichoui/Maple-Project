@@ -33,7 +33,7 @@ $width-menu-responsive: 425px;
     display: flex;
     align-items: baseline;
     align-self: center;
-    .login {
+    #login {
       color: $menu-top-right;
       font-size: 1.8em;
       margin-right: 5px;
@@ -174,15 +174,16 @@ $width-menu-responsive: 425px;
     }
   }
   li.active-route {
-    border-right: 5px solid hsla(255, 255%, 255%, 1);
+    border-right: 5px solid #4b5d69;
     margin-right: 2px;
     border-radius: 10px;
     a {
-      //color: black;
+      color: #4b5d69;
     }
     &:hover {
       a {
-        //color:hsla(255, 255%, 255%, 1) !important;
+        color:hsla(255, 255%, 255%, 1) !important;
+        border-color:white !important;
       }
     }
 

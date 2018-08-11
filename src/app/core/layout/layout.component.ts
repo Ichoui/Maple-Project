@@ -23,12 +23,15 @@ export class LayoutComponent implements OnInit {
     const burger = document.getElementById('hamburger-1');
     const burgertext = document.getElementById('text-b');
     const header = document.getElementById('header');
+    const login = document.getElementById('login');
     if (this.state === 'open') {
       overlay.classList.add('overlay');
       burger.classList.add('is-active');
       burgertext.classList.add('extend-burger');
       header.classList.add('shadw');
       burgertext.innerHTML = 'CLOSE';
+      login.style.pointerEvents = 'none';
+
 
     } else {
       overlay.classList.remove('overlay');
@@ -36,7 +39,7 @@ export class LayoutComponent implements OnInit {
       burgertext.classList.remove('extend-burger');
       header.classList.remove('shadw');
       burgertext.innerHTML = 'MENU';
-
+      login.style.pointerEvents = 'initial';
     }
   }
   constructor(private router: Router) {
