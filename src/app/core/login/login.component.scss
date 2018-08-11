@@ -34,16 +34,13 @@ form {
     text-align: center;
     height: 5vh;
     margin: 10px auto;
-  }
-  a {
-    width: 50%;
-    background-color: $brand-bluegray;
-    color:black;
-    margin:20px auto;
-      border: none;
-    &:hover {
-      outline: none;
+    &::placeholder {
+      color:$brand-bluegray;
     }
+  }
+  button.btn {
+    width: 50%;
+    margin:20px auto;
   }
   .icon-home {
    font-size: 1.5em;

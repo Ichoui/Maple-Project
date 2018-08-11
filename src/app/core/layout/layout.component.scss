@@ -177,13 +177,14 @@ $width-menu-responsive: 425px;
     border-right: 5px solid #4b5d69;
     margin-right: 2px;
     border-radius: 10px;
+    transition: all .5s ease;
     a {
       color: #4b5d69;
     }
     &:hover {
+      border-color: white;
       a {
         color:hsla(255, 255%, 255%, 1) !important;
-        border-color:white !important;
       }
     }
 
