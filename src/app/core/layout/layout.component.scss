@@ -11,7 +11,7 @@ $width-menu-responsive: 425px;
   display: flex;
   justify-content: space-between;
   z-index: 1299;
-  box-shadow: 3px 2px 12px 0 rgba(0,0,0,0.4);
+  box-shadow: 3px 2px 12px 0 rgba(0, 0, 0, 0.4);
   transition: all 0.5s ease-in-out;
   a.logo {
     margin-left: 100px;
@@ -29,41 +29,59 @@ $width-menu-responsive: 425px;
       color: hsla(255, 255%, 255%, 1);
     }
   }
-  .block-burger {
+  .menu-right {
     display: flex;
-    margin-right: 10px;
-    align-items: center;
-    width: 150px;
-    cursor: pointer;
-    margin-top: 10px;
-    .text-burger {
-      //display: block;
-      background-color: $menu-top-right;
-      border-radius: 100px;
-      color: #fff;
-      line-height: 15px;
-      padding: 15px 70px 11px 15px;
-      margin-right: -70px;
-      -webkit-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
-    }
-    .burger {
-      margin-left: 20px;
-      overflow: hidden;
-      background-color: white;
-      opacity:1;
+    align-items: baseline;
+    align-self: center;
+    .login {
+      color: $menu-top-right;
+      font-size: 1.8em;
+      margin-right: 5px;
       border-radius: 50%;
-      padding: 10px;
-      .line {
-        width: 30px;
-        height: 3px;
+      border: 1px solid black;
+      padding: 8px;
+      &:hover {
+        color: white;
+        border-color: white;
+        cursor: pointer;
+      }
+    }
+
+    .block-burger {
+      display: flex;
+      margin-right: 10px;
+      align-items: center;
+      width: 150px;
+      cursor: pointer;
+      .text-burger {
+        //display: block;
         background-color: $menu-top-right;
-        display: block;
-        margin: 5px auto;
-        -webkit-transition: all 0.3s ease-in-out;
-        -o-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
+        border-radius: 100px;
+        color: #fff;
+        line-height: 15px;
+        padding: 15px 70px 11px 15px;
+        margin-right: -70px;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+      .burger {
+        margin-left: 20px;
+        overflow: hidden;
+        background-color: white;
+        opacity: 1;
+        border-radius: 50%;
+        padding: 10px;
+        .line {
+          width: 30px;
+          height: 3px;
+          background-color: $menu-top-right;
+          display: block;
+          margin: 5px auto;
+          -webkit-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
       }
     }
   }
@@ -73,9 +91,11 @@ $width-menu-responsive: 425px;
   box-shadow: none !important;
   transition: all 0.3s ease-in-out;
 }
+
 .extend-burger {
   padding: 15px 75px 11px 15px !important;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -113,17 +133,13 @@ $width-menu-responsive: 425px;
   border-right: $menu-bg;
   backface-visibility: hidden;
   transform-origin: left;
-
-  & li:first-child {
+  li:first-child {
     margin-top: 120px;
   }
-  & li {
+
+  li {
     list-style-type: none;
-    &:hover {
-      outline: none;
-      cursor: pointer;
-    }
-    & a {
+    a {
       line-height: 64px;
       text-align: center;
       color: $menu-txt;
@@ -132,10 +148,10 @@ $width-menu-responsive: 425px;
         transition: all .5s ease;
         font-size: 2.5em;
         padding-top: 10px;
-        &:hover {
-          color: hsla(255, 255%, 255%, 1);
-          transform: translateX(5px) scale(1.2);
-        }
+        /*        &:hover {
+                  color: hsla(255, 255%, 255%, 1);
+                  transform: translateX(5px) scale(1.2);
+                }*/
       }
       span {
         position: absolute;
@@ -145,7 +161,23 @@ $width-menu-responsive: 425px;
         transition: all .5s ease;
         text-align: left;
         width: 66%;
-        &:hover {
+        /*        &:hover {
+                  color: hsla(255, 255%, 255%, 1);
+                  transform: translateX(20px);
+                }*/
+      }
+    }
+    &:hover {
+      outline: none;
+      cursor: pointer;
+      a {
+        color: hsla(255, 255%, 255%, 1);
+        transform: translateX(5px) scale(1.2);
+        i {
+          color: hsla(255, 255%, 255%, 1);
+          transform: translateX(5px) scale(1.2);
+        }
+        span {
           color: hsla(255, 255%, 255%, 1);
           transform: translateX(20px);
         }

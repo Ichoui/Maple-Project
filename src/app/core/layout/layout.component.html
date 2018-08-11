@@ -1,6 +1,7 @@
 <header id="header" class="menu-header">
-  <img src="assets/images/Logo_black.jpg" class="logo" alt="Ichoui Logo">
+  <img src="assets/images/Logo_black.jpg" class="logo" title="Ichoui® Logo">
   <div class="menu-right">
+    <span class="login icon-login" title="Se connecter"></span>
     <div class="block-burger" (click)="toggleMenu()">
       <div class="text-burger" id="text-b">MENU</div>
       <div class="burger" id="hamburger-1">
@@ -13,20 +14,24 @@
 </header>
 <section [@rotateAnimation]='state' id="nav" class="nav">
   <div class="icon">
-    <menu class="">
+    <menu>
       <li [routerLink]="['/home']" routerLinkActive="active-route" (click)="toggleMenu()">
-        <a><i class="fa fa-home"></i><span>Home</span></a>
+        <a>
+          <i class="fa fa-home"></i>
+          <span>Home</span>
+        </a>
       </li>
-      <!--<li [routerLink]="['/velib']" routerLinkActive="active-route">-->
-        <!--<a>-->
-          <!--<i class="fa fa-bicycle"></i><span>Vélo'Toulouse</span></a>-->
-      <!--</li>-->
       <li [routerLink]="['/suelename']" routerLinkActive="active-route" (click)="toggleMenu()">
         <a>
-          <i class="fa fa-bicycle"></i><span>Suelename</span></a>
+          <i class="fa fa-bicycle"></i>
+          <span>Suelename</span>
+        </a>
       </li>
       <li [routerLink]="['/jump']" routerLinkActive="active-route" (click)="toggleMenu()">
-        <a><i class="fa fa-cloud"></i><span>Jump</span></a>
+        <a>
+          <i class="fa fa-cloud"></i>
+          <span>Jump</span>
+        </a>
       </li>
     </menu>
   </div>
@@ -35,16 +40,22 @@
     <div class="name">Ichoui®</div>
     <div class="quote">Personal website ©</div>
     <div class="social">
-      <a target="_blank" href="https://facebook.com/ichoui"><i class="fa fa-facebook"></i></a>
-      <a target="_blank" href="https://twitter.com/ichoui"><i class="fa fa-twitter"></i></a>
-      <a target="_blank" href="https://instagram.com/ichouiii"><i class="fa fa-instagram"></i></a>
+      <a target="_blank" href="https://facebook.com/ichoui">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a target="_blank" href="https://twitter.com/ichoui">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a target="_blank" href="https://instagram.com/ichouiii">
+        <i class="fa fa-instagram"></i>
+      </a>
     </div>
   </div>
 </section>
 
 <section class="container layer">
   <div class="offset">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </div>
 </section>
 

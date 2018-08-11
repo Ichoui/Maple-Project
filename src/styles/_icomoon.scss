@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'maple-icomoon';
-  src:  url('/assets/fonts/maple-icomoon.eot?30ino7');
-  src:  url('/assets/fonts/maple-icomoon.eot?30ino7#iefix') format('embedded-opentype'),
-  url('/assets/fonts/maple-icomoon.ttf?30ino7') format('truetype'),
-  url('/assets/fonts/maple-icomoon.woff?30ino7') format('woff'),
-  url('/assets/fonts/maple-icomoon.svg?30ino7#maple-icomoon') format('svg');
+  src:  url('/assets/fonts/maple-icomoon.eot?1xsv3c');
+  src:  url('/assets/fonts/maple-icomoon.eot?1xsv3c#iefix') format('embedded-opentype'),
+  url('/assets/fonts/maple-icomoon.ttf?1xsv3c') format('truetype'),
+  url('/assets/fonts/maple-icomoon.woff?1xsv3c') format('woff'),
+  url('/assets/fonts/maple-icomoon.svg?1xsv3c#maple-icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -29,4 +29,10 @@
 }
 .icon-burger:before {
   content: "\e901";
+}
+.icon-login:before {
+  content: "\e902";
+}
+.icon-logout:before {
+  content: "\e903";
 }

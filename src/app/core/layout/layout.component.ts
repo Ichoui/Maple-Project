@@ -45,10 +45,6 @@ export class LayoutComponent implements OnInit {
   ngOnInit() {
     // this.router.events.subscribe(console.log);
 
-
-
   }
-
-
 
 }
