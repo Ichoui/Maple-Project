@@ -144,16 +144,12 @@ $width-menu-responsive: 425px;
       text-align: center;
       color: $menu-txt;
       text-shadow: 0 1px 0 hsla(0, 0%, 0%, 1);
-      i {
+      span.icon-menu {
         transition: all .5s ease;
         font-size: 2.5em;
         padding-top: 10px;
-        /*        &:hover {
-                  color: hsla(255, 255%, 255%, 1);
-                  transform: translateX(5px) scale(1.2);
-                }*/
       }
-      span {
+      span.page {
         position: absolute;
         left: 120px;
         font-size: 1.4em;
@@ -161,10 +157,6 @@ $width-menu-responsive: 425px;
         transition: all .5s ease;
         text-align: left;
         width: 66%;
-        /*        &:hover {
-                  color: hsla(255, 255%, 255%, 1);
-                  transform: translateX(20px);
-                }*/
       }
     }
     &:hover {
@@ -172,17 +164,28 @@ $width-menu-responsive: 425px;
       cursor: pointer;
       a {
         color: hsla(255, 255%, 255%, 1);
-        transform: translateX(5px) scale(1.2);
-        i {
-          color: hsla(255, 255%, 255%, 1);
-          transform: translateX(5px) scale(1.2);
+        span.icon-menu {
+          transform: translateX(19px) scale(1.2);
         }
-        span {
-          color: hsla(255, 255%, 255%, 1);
+        span.page {
           transform: translateX(20px);
         }
       }
     }
+  }
+  li.active-route {
+    border-right: 5px solid hsla(255, 255%, 255%, 1);
+    margin-right: 2px;
+    border-radius: 10px;
+    a {
+      //color: black;
+    }
+    &:hover {
+      a {
+        //color:hsla(255, 255%, 255%, 1) !important;
+      }
+    }
+
   }
 }
 
@@ -215,18 +218,36 @@ $width-menu-responsive: 425px;
     color: #444;
     text-shadow: 1px 1px hsla(0, 0%, 7%, 1);
   }
-  .social a {
-    font-size: 2em;
-    color: hsla(0, 0%, 20%, 1);
-    letter-spacing: .5em;
-    text-shadow: 1px 1px hsla(0, 0%, 27%, 1),
-    -1px -1px hsla(0, 0%, 7%, 1);
-    transition: all .5s ease;
+  .social {
+    a {
+      font-size: 2em;
+      color: hsla(0, 0%, 20%, 1);
+      letter-spacing: .5em;
+      text-shadow: 1px 1px hsla(0, 0%, 27%, 1),
+      -1px -1px hsla(0, 0%, 7%, 1);
+      transition: all .5s ease;
 
-    &:hover {
-      color: hsla(255, 255%, 255%, 1);
-      text-shadow: -1px -1px hsla(0, 0%, 34%, 1),
-      1px 1px hsla(0, 0%, 7%, 1);
+      &:hover {
+        //color: hsla(255, 255%, 255%, 1);
+        text-shadow: -1px -1px hsla(0, 0%, 34%, 1),
+        1px 1px hsla(0, 0%, 7%, 1);
+      }
+    }
+    .fb {
+      &:hover {
+        color:#6091ce;
+      }
+    }
+    .tw {
+      &:hover {
+        color:#1da1f2;
+      }
+    }
+    .ig {
+      &:hover {
+        color:#bd29a5;
+
+      }
     }
   }
 }

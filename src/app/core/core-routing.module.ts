@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { JumpComponent } from './jump/jump.component';
 import { VelibComponent } from './velib/velib.component';
-import {SuelenameComponent} from "./suelename/suelename.component";
+import { SuelenameComponent } from './suelename/suelename.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+
   {
     path: '',
     component: LayoutComponent,
@@ -32,13 +34,18 @@ const routes: Routes = [
       {
         path: 'suelename',
         component: SuelenameComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
       }
     ]
   },
   {
     path: '**',
     component: NotfoundComponent
-  }
+  },
+
 ];
 
 @NgModule({

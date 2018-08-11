@@ -8,15 +8,18 @@ import { JumpComponent } from './jump/jump.component';
 import { VelibComponent } from './velib/velib.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { SuelenameComponent } from './suelename/suelename.component';
+import { SharedModule } from '../shared/shared.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    SharedModule.forRoot()
   ],
   exports: [
     CoreRoutingModule
   ],
-  declarations: [HomeComponent, LayoutComponent, JumpComponent, VelibComponent, NotfoundComponent, SuelenameComponent]
+  declarations: [HomeComponent, LayoutComponent, JumpComponent, VelibComponent, NotfoundComponent, SuelenameComponent, LoginComponent]
 })
 export class CoreModule { }

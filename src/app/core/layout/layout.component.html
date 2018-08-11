@@ -1,7 +1,7 @@
 <header id="header" class="menu-header">
   <img src="assets/images/Logo_black.jpg" class="logo" title="Ichoui® Logo">
   <div class="menu-right">
-    <span class="login icon-login" title="Se connecter"></span>
+    <span [routerLink]="['/login']" class="login icon-login" title="Se connecter"></span>
     <div class="block-burger" (click)="toggleMenu()">
       <div class="text-burger" id="text-b">MENU</div>
       <div class="burger" id="hamburger-1">
@@ -17,20 +17,20 @@
     <menu>
       <li [routerLink]="['/home']" routerLinkActive="active-route" (click)="toggleMenu()">
         <a>
-          <i class="fa fa-home"></i>
-          <span>Home</span>
+          <span class="icon-menu icon-home"></span>
+          <span class="page">Home</span>
         </a>
       </li>
       <li [routerLink]="['/suelename']" routerLinkActive="active-route" (click)="toggleMenu()">
         <a>
-          <i class="fa fa-bicycle"></i>
-          <span>Suelename</span>
+          <span class="icon-menu icon-suelename"></span>
+          <span class="page">Suelename</span>
         </a>
       </li>
       <li [routerLink]="['/jump']" routerLinkActive="active-route" (click)="toggleMenu()">
         <a>
-          <i class="fa fa-cloud"></i>
-          <span>Jump</span>
+          <span class="icon-menu icon-jump"></span>
+          <span class="page">Jump</span>
         </a>
       </li>
     </menu>
@@ -40,13 +40,13 @@
     <div class="name">Ichoui®</div>
     <div class="quote">Personal website ©</div>
     <div class="social">
-      <a target="_blank" href="https://facebook.com/ichoui">
+      <a target="_blank" href="https://facebook.com/ichoui" class="fb">
         <i class="fa fa-facebook"></i>
       </a>
-      <a target="_blank" href="https://twitter.com/ichoui">
+      <a target="_blank" href="https://twitter.com/ichoui" class="tw">
         <i class="fa fa-twitter"></i>
       </a>
-      <a target="_blank" href="https://instagram.com/ichouiii">
+      <a target="_blank" href="https://instagram.com/ichouiii" class="ig">
         <i class="fa fa-instagram"></i>
       </a>
     </div>
