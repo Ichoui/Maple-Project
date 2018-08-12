@@ -1,0 +1,10 @@
+button.btn {
+  background: linear-gradient(to right, black,white, black);
+  color:black;
+  border: none;
+  transition: all 1s ease-out;
+  border-radius: 5px;
+  &:hover {
+    background: white;
+  }
+}

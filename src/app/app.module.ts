@@ -6,10 +6,10 @@ import { CoreModule } from './core/core.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
-import { FirebaseConfig } from '../../firebase.config';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { FirebaseConfig } from '../../firebase.config';
 
 
 @NgModule({
@@ -30,4 +30,6 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
   providers: [],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }
