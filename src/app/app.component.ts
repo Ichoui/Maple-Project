@@ -1,7 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'maple-root',
@@ -9,14 +9,28 @@ import { AngularFirestore } from 'angularfire2/firestore';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
-  title = 'maple';
-  user: Observable<firebase.User>;
-  items: Observable<any[]>;
-  constructor(public afAuth: AngularFireAuth, db: AngularFirestore) {
-    this.afAuth.auth.signInAnonymously();
-    this.user = this.afAuth.authState;
-    this.items = db.collection('items').valueChanges();
+
+export class AppComponent implements OnInit {
+
+  public items: Observable<any[]>;
+
+  constructor(db: AngularFirestore) {
+    this.items = db.collection('/user').valueChanges();
   }
+
+
+  ngOnInit() {
+    var db = firebase.firestore();
+
+    db.collection("user").get().then((querySnapshot) => {
+      querySnapshot.forEach(doc => {
+        console.log(doc.data());
+      });
+    });
+  }
+
 }
+
+
+
 

@@ -9,7 +9,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { FirebaseConfig } from '../../firebase.config';
+import { environment } from '../environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,10 +19,11 @@ import { FirebaseConfig } from '../../firebase.config';
     CoreModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
-    AngularFireModule.initializeApp(FirebaseConfig.firebase),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
@@ -32,4 +34,5 @@ import { FirebaseConfig } from '../../firebase.config';
 })
 
 
-export class AppModule { }
+export class AppModule  {
+}

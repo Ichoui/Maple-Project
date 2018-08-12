@@ -24,4 +24,8 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to maple!');
   }));
+
+  const firebase = require("firebase");
+// Required for side-effects
+  require("firebase/firestore");
 });
