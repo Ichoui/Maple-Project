@@ -36,9 +36,9 @@ $width-menu-responsive: 425px;
     #login {
       color: $menu-top-right;
       font-size: 1.8em;
-      margin-right: 5px;
+      margin-right: 10px;
       border-radius: 50%;
-      border: 1px solid black;
+      border: 1px solid $menu-top-right;
       padding: 8px;
       &:hover {
         color: white;

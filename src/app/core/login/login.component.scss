@@ -12,44 +12,65 @@
     color: hsla(255, 255%, 255%, 1);
   }
 }
+
 h1 {
   margin: 10px 0;
   text-align: center;
 }
+
 form {
   position: relative;
   height: 37.5vh;
   width: 20vw;
-  background: rgba(240,240,240,0.4);
+  background: rgba(240, 240, 240, 0.4);
   border-radius: 5px;
   margin: 30px auto;
-  display:flex;
+  display: flex;
   flex-direction: column;
   label {
-    display:none;
+    display: none;
   }
   input {
-    border:1px black solid;
+    border: 1px black solid;
     width: 90%;
     text-align: center;
     height: 5vh;
     margin: 10px auto;
     &::placeholder {
-      color:$brand-bluegray;
+      color: $brand-bluegray;
     }
   }
   button.btn {
     width: 50%;
-    margin:20px auto;
+    margin: 20px auto;
   }
-  .icon-home {
-   font-size: 1.5em;
-    position: absolute;
-    bottom: 2px;
-    left:2px;
+  .back {
+    display: flex;
+    align-items: baseline;
+    width:fit-content;
+    cursor: pointer;
+    .back-msg {
+      opacity: 0.0;
+      width: 0;
+
+    }
+    .icon-home {
+      font-size: 1.5em;
+      padding-left:3px;
+
+    }
     &:hover {
-      color:white;
-      cursor:pointer;
+      .back-msg {
+        padding-left: 10px;
+        transition: all .5s ease;
+        opacity: 1.0;
+        display: inline;
+        width: auto;
+      }
+      .icon-home {
+          color: white;
+          transition: all .5s ease;
+      }
     }
   }
 }
