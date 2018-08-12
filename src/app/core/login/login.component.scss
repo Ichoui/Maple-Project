@@ -34,6 +34,7 @@ form {
     border: 1px black solid;
     width: 90%;
     text-align: center;
+    border-radius: 5px;
     height: 5vh;
     margin: 10px auto;
     &::placeholder {
@@ -47,7 +48,7 @@ form {
   .back {
     display: flex;
     align-items: baseline;
-    width:fit-content;
+    width: fit-content;
     cursor: pointer;
     .back-msg {
       opacity: 0.0;
@@ -56,7 +57,7 @@ form {
     }
     .icon-home {
       font-size: 1.5em;
-      padding-left:3px;
+      padding-left: 3px;
 
     }
     &:hover {
@@ -68,8 +69,8 @@ form {
         width: auto;
       }
       .icon-home {
-          color: white;
-          transition: all .5s ease;
+        color: white;
+        transition: all .5s ease;
       }
     }
   }
