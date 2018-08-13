@@ -13,7 +13,7 @@
   }
 }
 
-h1 {
+h1, h3 {
   margin: 10px 0;
   text-align: center;
 }
@@ -21,7 +21,8 @@ h1 {
 div.form {
   position: relative;
   height: 37.5vh;
-  width: 20vw;
+  width: 25vw;
+  min-width: 25vw;
   background: rgba(240, 240, 240, 0.4);
   border-radius: 5px;
   margin: 30px auto;
@@ -41,9 +42,16 @@ div.form {
       color: $brand-bluegray;
     }
   }
-  button.btn {
-    width: 50%;
+  button.google {
+    width: auto;
     margin: 20px auto;
+    font-size: 1.2em;
+    img {
+      width: 50px;
+      margin-right: 25px;    }
+  }
+  button.logout {
+    margin-top: 5vw;
   }
   .back {
     position: absolute;
@@ -56,6 +64,7 @@ div.form {
     .back-msg {
       opacity: 0.0;
       width: 0;
+      font-size: 1.5em;
     }
     .icon-home {
       font-size: 1.5em;

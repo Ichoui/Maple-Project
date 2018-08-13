@@ -31,9 +31,8 @@ $width-menu-responsive: 425px;
   }
   .menu-right {
     display: flex;
-    align-items: baseline;
     align-self: center;
-    #login, #logout {
+    #login {
       color: $menu-top-right;
       font-size: 1.8em;
       margin-right: 10px;
@@ -45,6 +44,57 @@ $width-menu-responsive: 425px;
         border-color: white;
         cursor: pointer;
       }
+    }
+
+    #logout {
+      color: $menu-top-right;
+      font-size: 2.5em;
+      margin-right: 10px;
+      position: relative;
+      overflow: hidden;
+      &:hover {
+        color: yellow;
+        cursor: pointer;
+      }
+      #googlephoto {
+        width: 60px;
+        border-radius: 50%;
+      }
+    }
+    #content-logout {
+      position: fixed;
+      display: flex;
+      //visibility:hidden;
+      align-items: flex-end;
+      right: 140px;
+      flex-direction: column;
+      width: fit-content;
+      height: auto;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: white;
+      margin-top: 5px;
+      .identity {
+        margin-top: 5px;
+        font-size: 1.1em;
+      }
+      .signout {
+        margin: 5px 0;
+        font-size: 1.1em !important;
+        .icon-logout {
+          margin-left: 5px;
+          font-size: 1.1em !important;
+          padding-right: 6px;
+        }
+        &:hover {
+          cursor: pointer;
+          .icon-logout {
+            color: #e6e67a;
+          }
+        }
+      }
+
     }
 
     .block-burger {
@@ -90,6 +140,10 @@ $width-menu-responsive: 425px;
 .shadw {
   box-shadow: none !important;
   transition: all 0.3s ease-in-out;
+}
+
+.visibility {
+  visibility:visible !important ;
 }
 
 .extend-burger {
@@ -184,7 +238,7 @@ $width-menu-responsive: 425px;
     &:hover {
       border-color: white;
       a {
-        color:hsla(255, 255%, 255%, 1) !important;
+        color: hsla(255, 255%, 255%, 1) !important;
       }
     }
 
@@ -237,17 +291,17 @@ $width-menu-responsive: 425px;
     }
     .fb {
       &:hover {
-        color:#6091ce;
+        color: #6091ce;
       }
     }
     .tw {
       &:hover {
-        color:#1da1f2;
+        color: #1da1f2;
       }
     }
     .ig {
       &:hover {
-        color:#bd29a5;
+        color: #bd29a5;
 
       }
     }

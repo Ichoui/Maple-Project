@@ -16,16 +16,13 @@ export class UserService {
 
   loginGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
-    this.authUser.auth.signInWithPopup(provider).then(e => {
-      this.router.navigate(['/home']);
-    }).then(function (result) {
-      console.log(result);
-    });
+    this.authUser.auth.signInWithPopup(provider).then(function(result) {
+      // this.router.navigate(['/home']);
+      console.log(result.additionalUserInfo.profile);
+    })
   }
 
   logout() {
-    this.authUser.auth.signOut().then(e => {
-      this.router.navigate(['/home']);
-    });
-  }
+    this.authUser.auth.signOut();
+}
 }

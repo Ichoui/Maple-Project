@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../providers/user.service';
 
 @Component({
   selector: 'maple-home',
@@ -8,7 +9,9 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService: UserService) {
+    console.log(userService)
+  }
 
   ngOnInit() {
 

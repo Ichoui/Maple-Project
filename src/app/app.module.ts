@@ -10,9 +10,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './providers/user.service';
+import { firebaseConfig } from '../environments/firebase';
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { UserService } from './providers/user.service';
     CoreModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(firebaseConfig.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,

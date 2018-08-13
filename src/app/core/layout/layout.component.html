@@ -2,7 +2,14 @@
   <img src="assets/images/Logo_black.jpg" class="logo" title="Ichoui® Logo">
   <div class="menu-right">
     <div *ngIf="userService.user | async as user; else login">
-      <span id="logout" class="icon-logout" (click)="userService.logout()" title="Se déconnecter"></span>
+      <!--<span id="logout" class="icon-logout" title="Se déconnecter"></span>-->
+      <div id="logout">
+        <img id="googlephoto" src="{{ user.photoURL }}" title="{{ user.displayName }}" alt="Photo Google" (click)="toggleIdentity()">
+      </div>
+      <div id="content-logout" [@logoutMenu]='etat'>
+        <span class="identity">{{ user.displayName }}</span>
+        <span class="signout" title="Se déconnecter" (click)="userService.logout()"><span class="icon-logout"></span>Se déconnecter</span>
+      </div>
     </div>
 
     <ng-template #login>
@@ -19,6 +26,7 @@
     </div>
   </div>
 </header>
+
 <section [@rotateAnimation]='state' id="nav" class="nav">
   <div class="icon">
     <menu>

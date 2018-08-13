@@ -2,20 +2,30 @@
   <img src="assets/images/Logo_black.jpg" class="logo" title="Ichoui® Logo">
 
   <div class="form">
-    <h1>Connexion</h1>
     <!-- TO KEEP-->
     <!-- <label for="username">E-mail</label>
      <input type="email" id="username" placeholder="Pseudo">
      <label for="password">Password</label>
      <input type="password" id="password" placeholder="Mot de passe">
      <button href="#" class="btn" type="submit">Connexion</button>-->
-    <button class="btn" href="#" (click)="loginGoogle()">Google Login</button>
-    <div *ngIf="userService.user | async as user">
-      <button class="btn" (click)="userService.logout()">Logout</button>
-    </div>
+    <!--SI NON CONNECTÉ -->
+    <ng-template #connected>
+    <h1>Connexion</h1>
+    <button class="btn google" href="#" (click)="loginGoogle()"><img src="/assets/images/google.png">Google Login</button>
+
     <div class="back" [routerLink]="['/home']">
       <span class="icon-home"></span>
       <div class="back-msg">Home</div>
+    </div>
+    </ng-template>
+    <!--SI CONNECTÉ-->
+    <div *ngIf="userService.user | async as user; else connected">
+      <h3>Vous êtes maintenant connecté !</h3>
+      <div class="back" [routerLink]="['/home']">
+        <span class="icon-home"></span>
+        <div class="back-msg">Home</div>
+      </div>
+      <button class="btn logout" (click)="userService.logout()">Logout</button>
     </div>
   </div>
 

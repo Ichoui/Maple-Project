@@ -1,2 +1,14 @@
 @import "../../../styles/shared";
 
+.welcome {
+  display:flex;
+  flex-direction: column;
+  margin-top: 3vw;
+  span {
+    font-size: 2em;
+  }
+  img {
+    margin: auto;
+    width: 100px;
+  }
+}

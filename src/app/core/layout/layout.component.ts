@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService} from '../../providers/user.service';
-import { state, style, trigger } from '@angular/animations';
+import { UserService } from '../../providers/user.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'maple-layout',
@@ -9,9 +9,17 @@ import { state, style, trigger } from '@angular/animations';
   styleUrls: ['./layout.component.scss'],
   animations: [
     trigger('rotateAnimation', [
-      state('open', style({transform: 'rotateY(0deg)', transition: 'transform .24s linear'})),
-      state('close', style({transform: 'rotateY(-90deg) perspective(1000px)', transition: 'transform .24s linear'}))
+      state('open', style({transform: 'rotateY(0deg)'})),
+      state('close', style({transform: 'rotateY(-90deg) perspective(1000px)'})),
+      transition('close => open', animate('.3s linear')),
+      transition('open => close', animate('.3s linear'))
     ]),
+    trigger('logoutMenu', [
+      state('open', style({opacity: '1.0'})),
+      state('close', style({opacity: '0.0'})),
+      transition('open => close', animate('1s ease-out')),
+      transition('close => open', animate('0.3s ease-in'))
+    ])
   ]
 })
 export class LayoutComponent implements OnInit {
@@ -24,13 +32,15 @@ export class LayoutComponent implements OnInit {
     const burgertext = document.getElementById('text-b');
     const header = document.getElementById('header');
     const login = document.getElementById('login');
+    const logout = document.getElementById('logout');
     if (this.state === 'open') {
       overlay.classList.add('overlay');
       burger.classList.add('is-active');
       burgertext.classList.add('extend-burger');
       header.classList.add('shadw');
       burgertext.innerHTML = 'CLOSE';
-      login.style.pointerEvents = 'none';
+      login ? login.style.pointerEvents = 'none' : 'none';
+      logout ? logout.style.pointerEvents = 'none' : 'none';
 
 
     } else {
@@ -39,9 +49,17 @@ export class LayoutComponent implements OnInit {
       burgertext.classList.remove('extend-burger');
       header.classList.remove('shadw');
       burgertext.innerHTML = 'MENU';
-      login.style.pointerEvents = 'initial';
+      login ? login.style.pointerEvents = 'initial' : 'none';
+      logout ? logout.style.pointerEvents = 'initial' : 'none';
     }
   }
+
+  etat: string = 'close';
+
+  toggleIdentity() {
+    this.etat = (this.etat === 'open' ? 'close' : 'open');
+  }
+
   constructor(private router: Router, public userService: UserService) {
   }
 
