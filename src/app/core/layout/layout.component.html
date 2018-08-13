@@ -1,7 +1,14 @@
 <header id="header" class="menu-header">
   <img src="assets/images/Logo_black.jpg" class="logo" title="Ichoui® Logo">
   <div class="menu-right">
-    <span [routerLink]="['/login']" id="login" class="icon-login" title="Se connecter"></span>
+    <div *ngIf="userService.user | async as user; else login">
+      <span id="logout" class="icon-logout" (click)="userService.logout()" title="Se déconnecter"></span>
+    </div>
+
+    <ng-template #login>
+      <span [routerLink]="['/login']" id="login" class="icon-login" title="Se connecter"></span>
+    </ng-template>
+
     <div class="block-burger" (click)="toggleMenu()">
       <div class="text-burger" id="text-b">MENU</div>
       <div class="burger" id="hamburger-1">

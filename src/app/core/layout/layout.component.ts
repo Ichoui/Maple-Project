@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { UserService} from '../../providers/user.service';
+import { state, style, trigger } from '@angular/animations';
 
 @Component({
   selector: 'maple-layout',
@@ -42,12 +42,11 @@ export class LayoutComponent implements OnInit {
       login.style.pointerEvents = 'initial';
     }
   }
-  constructor(private router: Router) {
+  constructor(private router: Router, public userService: UserService) {
   }
 
   ngOnInit() {
     // this.router.events.subscribe(console.log);
-
   }
 
 }

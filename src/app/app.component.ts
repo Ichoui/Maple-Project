@@ -12,17 +12,17 @@ import * as firebase from 'firebase';
 
 export class AppComponent implements OnInit {
 
-  public items: Observable<any[]>;
+  public users: Observable<any[]>;
 
   constructor(db: AngularFirestore) {
-    this.items = db.collection('/user').valueChanges();
+    this.users = db.collection('/user').valueChanges();
   }
 
 
   ngOnInit() {
     var db = firebase.firestore();
 
-    db.collection("user").get().then((querySnapshot) => {
+     db.collection("user").get().then((querySnapshot) => {
       querySnapshot.forEach(doc => {
         console.log(doc.data());
       });

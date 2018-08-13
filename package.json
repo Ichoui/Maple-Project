@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build Prod": "ng build --prod",
-    "firebase_deploy":"ng build --prod && firebase deploy",
+    "firebase_deploy": "ng build --prod && firebase deploy",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -27,6 +27,7 @@
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
     "firebase": "^5.3.1",
+    "firebase-admin": "^6.0.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
     "rxjs": "^6.0.0",

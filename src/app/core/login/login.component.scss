@@ -18,7 +18,7 @@ h1 {
   text-align: center;
 }
 
-form {
+div.form {
   position: relative;
   height: 37.5vh;
   width: 20vw;
@@ -46,6 +46,9 @@ form {
     margin: 20px auto;
   }
   .back {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
     display: flex;
     align-items: baseline;
     width: fit-content;
@@ -53,7 +56,6 @@ form {
     .back-msg {
       opacity: 0.0;
       width: 0;
-
     }
     .icon-home {
       font-size: 1.5em;

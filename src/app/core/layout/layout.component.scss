@@ -33,7 +33,7 @@ $width-menu-responsive: 425px;
     display: flex;
     align-items: baseline;
     align-self: center;
-    #login {
+    #login, #logout {
       color: $menu-top-right;
       font-size: 1.8em;
       margin-right: 10px;

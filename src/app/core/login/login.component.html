@@ -1,18 +1,26 @@
 <div class="container text-center">
   <img src="assets/images/Logo_black.jpg" class="logo" title="Ichoui® Logo">
 
-  <form action="">
-  <h1>Connexion</h1>
-    <label for="username">E-mail</label>
-    <input type="email" id="username" placeholder="Pseudo">
-    <label for="password">Password</label>
-    <input type="password" id="password" placeholder="Mot de passe">
-    <button href="#" class="btn" type="submit">Connexion</button>
-    <div class="back" [routerLink]="['/home']" >
+  <div class="form">
+    <h1>Connexion</h1>
+    <!-- TO KEEP-->
+    <!-- <label for="username">E-mail</label>
+     <input type="email" id="username" placeholder="Pseudo">
+     <label for="password">Password</label>
+     <input type="password" id="password" placeholder="Mot de passe">
+     <button href="#" class="btn" type="submit">Connexion</button>-->
+    <button class="btn" href="#" (click)="loginGoogle()">Google Login</button>
+    <div *ngIf="userService.user | async as user">
+      <button class="btn" (click)="userService.logout()">Logout</button>
+    </div>
+    <div class="back" [routerLink]="['/home']">
       <span class="icon-home"></span>
       <div class="back-msg">Home</div>
     </div>
-  </form>
+  </div>
+
+
+
 
 </div>
 
