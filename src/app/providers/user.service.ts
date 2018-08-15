@@ -12,7 +12,6 @@ import { switchMap } from 'rxjs/operators';
 export class UserService implements OnInit{
 
   user$: Observable<User>;
-  role: boolean;
 
   constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore) {
     this.user$ = afAuth.authState.pipe(switchMap(user => {

@@ -11,12 +11,11 @@ export class LoginComponent implements OnInit {
   user: User;
 
   constructor(public userService: UserService) {
+
   }
 
   ngOnInit() {
     this.userService.user$.subscribe(user => this.user = user);
-    console.log(this.userService.data)
-
   }
 
   loginGoogle() {
