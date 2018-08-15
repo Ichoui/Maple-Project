@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../providers/user.service';
 import { User } from '../../providers/user';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'maple-login',
@@ -10,13 +9,14 @@ import { map } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   user: User;
-  role: boolean;
 
   constructor(public userService: UserService) {
   }
 
   ngOnInit() {
     this.userService.user$.subscribe(user => this.user = user);
+    console.log(this.userService.data)
+
   }
 
   loginGoogle() {

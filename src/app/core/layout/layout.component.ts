@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../../providers/user.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { User } from '../../providers/user';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'maple-layout',
@@ -24,6 +25,9 @@ import { User } from '../../providers/user';
   ]
 })
 export class LayoutComponent implements OnInit {
+
+  constructor(public userService: UserService) {
+  }
 
   state: string = 'close'; // passer à close
   toggleMenu() {
@@ -56,18 +60,22 @@ export class LayoutComponent implements OnInit {
   }
 
   etat: string = 'close';
-
   toggleIdentity() {
     this.etat = (this.etat === 'open' ? 'close' : 'open');
-  }
-
-  constructor(private router: Router, public userService: UserService) {
   }
 
   user: User;
   ngOnInit() {
     // this.router.events.subscribe(console.log);
     this.userService.user$.subscribe(user => this.user = user);
-  }
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log('ok')
+        console.log(user);
+      } else {
+        console.log('noone');
+      }
+    });  }
 
 }

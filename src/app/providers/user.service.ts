@@ -12,6 +12,8 @@ import { switchMap } from 'rxjs/operators';
 export class UserService implements OnInit{
 
   user$: Observable<User>;
+  role: boolean;
+
   constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore) {
     this.user$ = afAuth.authState.pipe(switchMap(user => {
       if (user) {
@@ -29,11 +31,15 @@ export class UserService implements OnInit{
     const provider = new firebase.auth.GoogleAuthProvider();
     this.afAuth.auth.signInWithPopup(provider).then((credential) => {
       // noinspection BadExpressionStatementJS
-      credential.additionalUserInfo.profile.email === 'morganichoui@gmail.com' ? 'none' : this.updateUser(credential.user);
+      if (credential.additionalUserInfo.profile.email === 'morganichoui@gmail.com') {
+        this.updateUser(credential.user, true);
+      } else {
+        this.updateUser(credential.user, false);
+      }
     });
   }
 
-  updateUser(user) {
+  updateUser(user, bool) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const data: User = {
       uid: user.uid,
@@ -42,7 +48,7 @@ export class UserService implements OnInit{
       photoURL: user.photoURL,
       roles: {
         user: true,
-        admin: false
+        admin: bool
       }
     };
     return userRef.set(data, {merge: true});
