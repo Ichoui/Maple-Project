@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../providers/user.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { User } from '../../providers/user';
 
 @Component({
   selector: 'maple-layout',
@@ -63,8 +64,10 @@ export class LayoutComponent implements OnInit {
   constructor(private router: Router, public userService: UserService) {
   }
 
+  user: User;
   ngOnInit() {
     // this.router.events.subscribe(console.log);
+    this.userService.user$.subscribe(user => this.user = user);
   }
 
 }

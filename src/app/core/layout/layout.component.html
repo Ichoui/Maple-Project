@@ -1,7 +1,7 @@
 <header id="header" class="menu-header">
   <img src="assets/images/Logo_black.jpg" class="logo" title="Ichoui® Logo">
   <div class="menu-right">
-    <div *ngIf="userService.user | async as user; else login">
+    <div *ngIf="user; else login">
       <!--<span id="logout" class="icon-logout" title="Se déconnecter"></span>-->
       <div id="logout">
         <img id="googlephoto" src="{{ user.photoURL }}" title="{{ user.displayName }}" alt="Photo Google" (click)="toggleIdentity()">

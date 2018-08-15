@@ -21,11 +21,11 @@ import { firebaseConfig } from '../environments/firebase';
     CoreModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireDatabaseModule,
-    ReactiveFormsModule
+    AngularFireDatabaseModule
   ],
   declarations: [
     AppComponent,

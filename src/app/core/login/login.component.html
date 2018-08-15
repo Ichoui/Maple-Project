@@ -8,10 +8,11 @@
      <label for="password">Password</label>
      <input type="password" id="password" placeholder="Mot de passe">
      <button href="#" class="btn" type="submit">Connexion</button>-->
+
     <!--SI NON CONNECTÉ -->
     <ng-template #connected>
     <h1>Connexion</h1>
-    <button class="btn google" href="#" (click)="loginGoogle()"><img src="/assets/images/google.png">Google Login</button>
+    <button class="btn google" href="#" (click)="loginGoogle()"><img src="/assets/images/google.png">Google</button>
 
     <div class="back" [routerLink]="['/home']">
       <span class="icon-home"></span>
@@ -19,13 +20,19 @@
     </div>
     </ng-template>
     <!--SI CONNECTÉ-->
-    <div *ngIf="userService.user | async as user; else connected">
+    <div *ngIf="user; else connected">
+      <!--<div *ngIf="role"></div>-->
       <h3>Vous êtes maintenant connecté !</h3>
       <div class="back" [routerLink]="['/home']">
         <span class="icon-home"></span>
         <div class="back-msg">Home</div>
       </div>
       <button class="btn logout" (click)="userService.logout()">Logout</button>
+
+      <div *ngIf="user">
+        <p>User {{user.roles?.user}}</p>
+        <p>admin : {{ user.roles?.admin}}</p>
+      </div>
     </div>
   </div>
 
