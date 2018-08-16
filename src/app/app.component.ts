@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ɵEMPTY_ARRAY } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
-import { User } from './providers/user';
 
 @Component({
   selector: 'maple-root',
@@ -20,19 +19,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
     const users = this.queryDatabase('users', 'roles.admin');
-    const userId = this.queryDatabase('users', 'uid');
+    var userId = this.queryDatabase('users', 'uid');
     console.log(userId);
 
-    Object.keys(userId).forEach(function(key) {
-      console.log(key, userId[key]);
-    });
-
-
     firebase.auth().onAuthStateChanged(function (user) {
+      // console.log(user.uid);
       if (user) {
-        console.log(user);
+        // console.log(user);
         let email, uid;
 
         if (user != null) {
@@ -44,18 +38,20 @@ export class AppComponent implements OnInit {
   }
 
   /* Permet de requête sur une table et un champ en particulier*/
-  queryDatabase(table, champ) {
-    const array = [];
+  queryDatabase(table, field) {
     const db = firebase.firestore();
-    db.collection(table).get().then((querySnapshot) => {
-      querySnapshot.forEach(doc => {
-        // console.log(doc.data());
-        const a = doc.get(champ);
-        array.push(a);
+    const array = [];
+    const myCollection = db.collection(table);
 
+    return myCollection.get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+          // console.log(doc.data());
+          // const a = doc.data();
+          const a = doc.get(field);
+          array.push(a);
+        });
+        return array;
       });
-    });
-    return array;
   }
-
 }
