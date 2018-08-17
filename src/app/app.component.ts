@@ -2,7 +2,6 @@ import { Component, OnInit, ViewEncapsulation, ɵEMPTY_ARRAY } from '@angular/co
 import { Observable } from 'rxjs/internal/Observable';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
-import { logger } from 'codelyzer/util/logger';
 
 @Component({
   selector: 'maple-root',
@@ -23,20 +22,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     // const users = AppComponent.queryDatabase('users', 'roles.admin');
-    const userId = this.queryDatabase('users', 'roles.admin', '==', 'true');
+    const userId = this.queryDatabase('users', 'roles.admin', '==', true);
     console.log(userId);
 
-    userId.then(e => {
-      console.log(e);
-    }).catch(error => {
-      console.log(error);
-    });
-
-    Promise.reject(userId).then(e => {
-      console.log(e);
-      console.log('prome ok');
-    }, function () {
-      console.log('Promise reject callback');
+    userId.then(function (value) {
+      console.log(value);
     });
 
     firebase.auth().onAuthStateChanged(function (user) {
@@ -54,30 +44,31 @@ export class AppComponent implements OnInit {
   }
 
   /* Permet de requête sur une table et un champ en particulier*/
-  queryDatabase(table, field, op, value) : Promise<any>{
+  queryDatabase(table, field, op?, value?) {
     const db = firebase.firestore();
-    let array = [];
     const myCollection = db.collection(table);
-
-    // myCollection.onSnapshot(function (querySnapshot) {
-    //   querySnapshot.forEach(function (doc) {
-    //     array.push(doc.get(field));
-    //   });
-    //   console.log('Field <' + field + '> : ', array.join(', '));
-    //   // const a = firebase.auth().currentUser.uid;
-    // });
-
-    // const a = myCollection.where(field, op, value);
-    const query = myCollection.where('email', '==', 'morganichoui@gmail.com');
-    // console.log(a);
-    return query.get().then(e => {
-      console.log(e);
-      e.forEach(re => {
-        this.d = re.data();
-        console.log(this.d);
-        return re.data();
+    const array = [];
+    console.log(value);
+    if (op === undefined && value === undefined) {
+      return myCollection.onSnapshot(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          array.push(doc.get(field));
+        });
+        console.log('Field <' + field + '> : ', array.join(', '));
+        // const a = firebase.auth().currentUser.uid;
       });
-    });
-
+    } else {
+      // const a = myCollection.where(field, op, value);
+      const query = myCollection.where('email', '==', 'morganichoui@gmail.com');
+      return query.get().then(e => {
+        console.log(e);
+        e.forEach(re => {
+          this.d = re.data();
+          console.log(this.d);
+          re.data();
+        });
+      });
+    }
   }
+
 }
