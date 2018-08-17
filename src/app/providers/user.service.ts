@@ -9,7 +9,7 @@ import { switchMap } from 'rxjs/operators';
 
 @Injectable()
 
-export class UserService implements OnInit{
+export class UserService implements OnInit {
 
   user$: Observable<User>;
 
@@ -29,7 +29,6 @@ export class UserService implements OnInit{
   loginGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
     this.afAuth.auth.signInWithPopup(provider).then((credential) => {
-      // noinspection BadExpressionStatementJS
       const userAuth = firebase.auth().currentUser;
       if (userAuth.email === 'morganichoui@gmail.com') {
         this.updateUser(credential.user, true);

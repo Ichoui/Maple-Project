@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation, ɵEMPTY_ARRAY } from '@angular/co
 import { Observable } from 'rxjs/internal/Observable';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
+import { logger } from 'codelyzer/util/logger';
 
 @Component({
   selector: 'maple-root',
@@ -16,12 +17,13 @@ export class AppComponent implements OnInit {
 
   constructor(db: AngularFirestore) {
     this.users = db.collection('/users').valueChanges(); // créer la valeur users pour la vue
+
   }
 
   ngOnInit() {
-    const users = this.queryDatabase('users', 'roles.admin');
-    var userId = this.queryDatabase('users', 'uid');
-    console.log(userId);
+    // const users = AppComponent.queryDatabase('users', 'roles.admin');
+    const userId = AppComponent.queryDatabase('users', 'uid');
+    console.log(userId.name);
 
     firebase.auth().onAuthStateChanged(function (user) {
       // console.log(user.uid);
@@ -35,23 +37,30 @@ export class AppComponent implements OnInit {
         }
       }
     });
+    const db = firebase.firestore();
+
+    var citiesRef = db.collection("cities");
+
+     var query = citiesRef.where("capital", "==", true);
+    console.log(query);
   }
 
+
   /* Permet de requête sur une table et un champ en particulier*/
-  queryDatabase(table, field) {
+  static queryDatabase(table, field) {
     const db = firebase.firestore();
-    const array = [];
+    let array = [];
     const myCollection = db.collection(table);
 
-    return myCollection.get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach(doc => {
-          // console.log(doc.data());
-          // const a = doc.data();
-          const a = doc.get(field);
-          array.push(a);
-        });
-        return array;
+    return myCollection.onSnapshot(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        array.push(doc.get(field));
       });
+      console.log('Field <' + field + '> : ', array.join(', '));
+      // const a = firebase.auth().currentUser.uid;
+    });
+
+    // const a = myCollection.where('email', '==', 'morganichoui@gmail.com');
+    // console.log(a);
   }
 }
