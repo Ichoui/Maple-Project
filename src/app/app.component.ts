@@ -47,8 +47,9 @@ export class AppComponent implements OnInit {
     });
   }
 
-  /* Permet de requête sur une table et un champ en particulier*/
-  queryDatabase(table, field, op?, value?): any {
+  /* Permet de requête sur une table et un champ en particulier
+  Optionnal : on peut query sur table, champ et une valeur particulière*/
+  queryDatabase(table, field, operator?, value?): any {
     const db = firebase.firestore();
     const myCollection = db.collection(table);
     const array = [];
@@ -68,7 +69,7 @@ export class AppComponent implements OnInit {
       return query.get().then(value => {
         value.forEach(snap => {
           const data = snap.data();
-          array.push(data)
+          array.push(data);
         });
         return array;
       });
