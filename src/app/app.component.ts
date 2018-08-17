@@ -14,6 +14,7 @@ import { logger } from 'codelyzer/util/logger';
 export class AppComponent implements OnInit {
 
   public users: Observable<any[]>;
+  public d: any;
 
   constructor(db: AngularFirestore) {
     this.users = db.collection('/users').valueChanges(); // créer la valeur users pour la vue
@@ -22,8 +23,21 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     // const users = AppComponent.queryDatabase('users', 'roles.admin');
-    const userId = AppComponent.queryDatabase('users', 'uid');
-    console.log(userId.name);
+    const userId = this.queryDatabase('users', 'roles.admin', '==', 'true');
+    console.log(userId);
+
+    userId.then(e => {
+      console.log(e);
+    }).catch(error => {
+      console.log(error);
+    });
+
+    Promise.reject(userId).then(e => {
+      console.log(e);
+      console.log('prome ok');
+    }, function () {
+      console.log('Promise reject callback');
+    });
 
     firebase.auth().onAuthStateChanged(function (user) {
       // console.log(user.uid);
@@ -37,30 +51,33 @@ export class AppComponent implements OnInit {
         }
       }
     });
-    const db = firebase.firestore();
-
-    var citiesRef = db.collection("cities");
-
-     var query = citiesRef.where("capital", "==", true);
-    console.log(query);
   }
 
-
   /* Permet de requête sur une table et un champ en particulier*/
-  static queryDatabase(table, field) {
+  queryDatabase(table, field, op, value) : Promise<any>{
     const db = firebase.firestore();
     let array = [];
     const myCollection = db.collection(table);
 
-    return myCollection.onSnapshot(function (querySnapshot) {
-      querySnapshot.forEach(function (doc) {
-        array.push(doc.get(field));
+    // myCollection.onSnapshot(function (querySnapshot) {
+    //   querySnapshot.forEach(function (doc) {
+    //     array.push(doc.get(field));
+    //   });
+    //   console.log('Field <' + field + '> : ', array.join(', '));
+    //   // const a = firebase.auth().currentUser.uid;
+    // });
+
+    // const a = myCollection.where(field, op, value);
+    const query = myCollection.where('email', '==', 'morganichoui@gmail.com');
+    // console.log(a);
+    return query.get().then(e => {
+      console.log(e);
+      e.forEach(re => {
+        this.d = re.data();
+        console.log(this.d);
+        return re.data();
       });
-      console.log('Field <' + field + '> : ', array.join(', '));
-      // const a = firebase.auth().currentUser.uid;
     });
 
-    // const a = myCollection.where('email', '==', 'morganichoui@gmail.com');
-    // console.log(a);
   }
 }
