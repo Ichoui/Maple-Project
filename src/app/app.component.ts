@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
     const myCollection = db.collection(table);
     const array = [];
 
-    if (op === undefined && value === undefined) {
+    if (operator === undefined && value === undefined) {
       return myCollection.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
           array.push(doc.get(field));
