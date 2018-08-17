@@ -13,36 +13,45 @@ import * as firebase from 'firebase';
 export class AppComponent implements OnInit {
 
   public users: Observable<any[]>;
+  public abc: Observable<any[]>;
 
   constructor(db: AngularFirestore) {
     this.users = db.collection('/users').valueChanges(); // créer la valeur users pour la vue
 
+
   }
 
   ngOnInit() {
-    const users = this.queryDatabase('users', 'roles.admin');
-    // console.log(users);
-    users.then(v => {
-      console.log(v);
-    });
+    const userMail = this.queryDatabase('users', 'email', '==', 'morganichoui@gmail.com');
+    const administrateur = this.queryDatabase('users', 'roles.admin', '==', true);
+    this.isAdmin(administrateur);
 
+    /*
+        firebase.auth().onAuthStateChanged(user => {
+          if (user != null) {
+            let email, val;
 
-    const userId = this.queryDatabase('users', 'roles.admin', '==', true);
-    // console.log(userId);
+            email = user.email;
+            userId.then(function (value) {
+              val = value;
+              val[0].email === email ? console.log('Administrateur Morgan connecté') : console.log('Utilisateur qui n\'est pas morgan');
+            });
+          }
+        });
+    */
+  }
 
-    userId.then(function (value) {
-      console.log(value);
-    });
-    firebase.auth().onAuthStateChanged(function (user) {
-      // console.log(user.uid);
+  isAdmin(queryDatabase){
+    return firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        // console.log(user);
-        let email, uid;
-
-        if (user != null) {
-          email = user.email;
-          uid = user.uid;
-        }
+        queryDatabase.then(function (value) {
+          console.log(value);
+          for (let index = 0; index < value.length; index++)
+            if (value[index].uid === user.uid) {
+              console.log('L\'utilisateur connecté est administrateur');
+              return true;
+            }
+        });
       }
     });
   }
@@ -64,8 +73,8 @@ export class AppComponent implements OnInit {
         return array;
       });
     } else {
-      // const a = myCollection.where(field, op, value);
-      const query = myCollection.where('email', '==', 'morganichoui@gmail.com');
+      const query = myCollection.where(field, operator, value);
+      // const query = myCollection.where('email', '==', 'morganichoui@gmail.com');
       return query.get().then(value => {
         value.forEach(snap => {
           const data = snap.data();

@@ -30,11 +30,11 @@ export class UserService implements OnInit {
     const provider = new firebase.auth.GoogleAuthProvider();
     this.afAuth.auth.signInWithPopup(provider).then((credential) => {
       const userAuth = firebase.auth().currentUser;
-      if (userAuth.email === 'morganichoui@gmail.com') {
+      // if (userAuth.email === 'morganichoui@gmail.com') {
         this.updateUser(credential.user, true);
-      } else {
-        this.updateUser(credential.user, false);
-      }
+      // } else {
+      //   this.updateUser(credential.user, false);
+      // }
     });
   }
 
