@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation, ɵEMPTY_ARRAY } from '@angular/co
 import { Observable } from 'rxjs/internal/Observable';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
+import { User } from './providers/user';
 
 @Component({
   selector: 'maple-root',
@@ -12,19 +13,24 @@ import * as firebase from 'firebase';
 
 export class AppComponent implements OnInit {
 
-  public users: Observable<any[]>;
+  // public users$: User;
+  public users$: Observable<any[]>;
+  public use: Observable<User>;
   public abc: Observable<any[]>;
 
   constructor(db: AngularFirestore) {
-    this.users = db.collection('/users').valueChanges(); // créer la valeur users pour la vue
+    this.users$ = db.collection('/users/').valueChanges(); // créer la valeur users pour la vue
+    console.log(this.users$);
 
-
+    const test = db.collection('/users/').valueChanges(); // créer la valeur users pour la vue
+    console.log(test);
   }
 
   ngOnInit() {
     const userMail = this.queryDatabase('users', 'email', '==', 'morganichoui@gmail.com');
-    const administrateur = this.queryDatabase('users', 'roles.admin', '==', true);
-    this.isAdmin(administrateur);
+    const queryAdministrateur = this.queryDatabase('users', 'roles.admin', '==', true);
+    // this.isAdmin(administrateur);
+    console.log(this.isAdmin(queryAdministrateur));
 
     /*
         firebase.auth().onAuthStateChanged(user => {
@@ -41,7 +47,7 @@ export class AppComponent implements OnInit {
     */
   }
 
-  isAdmin(queryDatabase){
+  isAdmin(queryDatabase) {
     return firebase.auth().onAuthStateChanged(user => {
       if (user) {
         queryDatabase.then(function (value) {

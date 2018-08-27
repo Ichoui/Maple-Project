@@ -1,8 +1,6 @@
 <router-outlet></router-outlet>
 <ul>
-  <li *ngFor="let item of users | async">
-    <div>{{ item.roles | json }}</div>
+  <li *ngFor="let item of users$ | async">
+<!--     <div>{{ item.roles.admin | json }}</div>-->
   </li>
-
-
 </ul>

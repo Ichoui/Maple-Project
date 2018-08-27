@@ -3,7 +3,7 @@ export interface User {
   email: string;
   displayName: string;
   photoURL: string;
-  roles: Roles;
+  // roles: Roles;
 }
 
 export interface Roles {
