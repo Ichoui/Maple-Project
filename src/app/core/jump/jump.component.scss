@@ -1,5 +1,9 @@
 @import "../../../styles/stylefullpage";
 
+.jump-active {
+  color:$brand-darkred !important;
+}
+
 .projects {
   padding-left: 0;
   .projet {
@@ -7,10 +11,7 @@
     display: inline;
     margin-left: 20px;
     font-size: 1.4em;
-    color: darkred;
+    color: $brand-bluegray;
   }
 }
 
-.test {
-  color:orange;
-}

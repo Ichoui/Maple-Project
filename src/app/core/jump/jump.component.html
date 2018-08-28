@@ -1,7 +1,10 @@
 <h1 class="title">Jump Projects</h1>
 <ul class="projects">
-  <li class="projet" [routerLink]="['/jump/tools']" routerLinkActive="jump">Tools</li>
-  <li class="projet" [routerLink]="['/jump/sap']" routerLinkActive="jump">SAP</li>
-  <li class="projet" [routerLink]="['/jump/dci']" routerLinkActive="jump">DCI</li>
-  <li class="projet" [routerLink]="['/jump/platform']" routerLinkActive="jump">Platform</li>
+  <li class="projet" [routerLink]="['/jump/tools']" routerLinkActive="jump-active">Tools</li>
+  <li class="projet" [routerLink]="['/jump/sap']" routerLinkActive="jump-active">SAP</li>
+  <li class="projet" [routerLink]="['/jump/dci']" routerLinkActive="jump-active">DCI</li>
+  <li class="projet" [routerLink]="['/jump/platform']" routerLinkActive="jump-active">Platform</li>
 </ul>
+<div class="content">
+<router-outlet></router-outlet>
+</div>

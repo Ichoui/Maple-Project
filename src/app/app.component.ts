@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
 
   constructor(db: AngularFirestore, public userService: UserService) {
     this.users$ = db.collection('users/').valueChanges(); // créer la valeur users$ pour la vue et permet de boucler dedans
-
   }
 
   ngOnInit() {
