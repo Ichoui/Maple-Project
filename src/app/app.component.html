@@ -1,9 +1,9 @@
 <router-outlet></router-outlet>
 
-  <!--<li *ngFor="let item of users$ | async">-->
-    <!--<div>{{ item | json }}</div>-->
-  <!--</li>-->
+  <li *ngFor="let item of users$ | async">
+    <div>{{ item.displayName  }}</div>
+  </li>
 
-<!--<div *ngIf="admin">-->
-  <!--TEST TEST TEST-->
-<!--</div>-->
+<div *ngIf="admin">
+  TEST TEST TEST
+</div>

@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     return firebase.auth().onAuthStateChanged(user => {
       if (user) {
         queryDatabase.then(function (value) {
-          console.log(value);
+          // console.log(value);
           for (let index = 0; index < value.length; index++)
             if (value[index].uid === user.uid) {
               console.log('L\'utilisateur connecté est administrateur');
@@ -62,7 +62,7 @@ export class AppComponent implements OnInit {
   queryDatabase(table, field, operator?, value?): any {
     const db = firebase.firestore();
     const myCollection = db.collection(table);
-    const array = [];
+      const array = [];
 
     if (operator === undefined && value === undefined) {
       return myCollection.get().then((querySnapshot) => {

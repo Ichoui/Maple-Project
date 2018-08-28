@@ -1,4 +1,7 @@
-<ul *ngFor="let data of jump$ | async">
-  <li>{{ data | json }}</li>
-</ul>
+<!--<ul *ngFor="let jump$ of jump$ | async">-->
+  <!--<li>{{ jump$.database }}</li>-->
+<!--</ul>-->
 
+<ul *ngFor="let a of item| async">
+  <li>{{ a.database }}</li>
+</ul>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
-import { Test } from '../../../providers/jump';
+import { AngularFirestore } from 'angularfire2/firestore';
+import * as firebase from 'firebase';
+
 
 @Component({
   selector: 'maple-tools',
@@ -11,16 +12,21 @@ import { Test } from '../../../providers/jump';
 
 export class ToolsComponent implements OnInit {
 
-  public jump$: Observable<Test[]>;
-  public collection: AngularFirestoreCollection<Test>;
+  public jump$: Observable<{}>;
+  public array = {};
 
-  constructor(db: AngularFirestore) {
-    this.collection = db.collection<Test>('jump');
-    this.jump$ = this.collection.valueChanges();
+  public item: any;
+
+  constructor(public db: AngularFirestore) {
+    this.jump$ = db.collection('jump').valueChanges();
   }
 
 
   ngOnInit() {
+    this.jump$.subscribe(i => {
+      console.log(i);
+      this.item = i;
+    })
   }
 
 }

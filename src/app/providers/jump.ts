@@ -1,4 +1,6 @@
-export interface Test {
-  name: string;
-  link: string;
+export interface Jump {
+  outil: {
+    name: string;
+    link: string;
+  }
 }
