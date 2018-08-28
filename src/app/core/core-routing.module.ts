@@ -7,6 +7,10 @@ import { JumpComponent } from './jump/jump.component';
 import { VelibComponent } from './velib/velib.component';
 import { SuelenameComponent } from './suelename/suelename.component';
 import { LoginComponent } from './login/login.component';
+import { ToolsComponent } from './jump/tools/tools.component';
+import { SapComponent } from './jump/sap/sap.component';
+import { DciComponent } from './jump/dci/dci.component';
+import { PlatformComponent } from './jump/platform/platform.component';
 
 const routes: Routes = [
   {
@@ -28,7 +32,25 @@ const routes: Routes = [
       },
       {
         path: 'jump',
-        component: JumpComponent
+        component: JumpComponent,
+        children: [
+          {
+            path:'tools',
+            component: ToolsComponent
+          },
+          {
+            path:'sap',
+            component: SapComponent
+          },
+          {
+            path:'dci',
+            component: DciComponent
+          },
+          {
+            path:'platform',
+            component: PlatformComponent
+          }
+        ]
       },
       {
         path: 'velib',

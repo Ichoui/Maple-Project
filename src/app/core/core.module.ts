@@ -10,12 +10,14 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { SuelenameComponent } from './suelename/suelename.component';
 import { SharedModule } from '../shared/shared.module';
 import { LoginComponent } from './login/login.component';
+import { JumpModule } from './jump/jump.module';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreRoutingModule,
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    JumpModule
   ],
   exports: [
     CoreRoutingModule

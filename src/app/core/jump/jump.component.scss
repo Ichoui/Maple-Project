@@ -1,2 +1,16 @@
 @import "../../../styles/stylefullpage";
 
+.projects {
+  padding-left: 0;
+  .projet {
+    cursor:pointer;
+    display: inline;
+    margin-left: 20px;
+    font-size: 1.4em;
+    color: darkred;
+  }
+}
+
+.test {
+  color:orange;
+}
