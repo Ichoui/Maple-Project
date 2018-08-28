@@ -37,13 +37,13 @@
           <span class="page">Home</span>
         </a>
       </li>
-      <li [routerLink]="['/suelename']" routerLinkActive="active-route" (click)="toggleMenu()">
+      <li *ngIf="admin" [routerLink]="['/suelename']" routerLinkActive="active-route" (click)="toggleMenu()">
         <a>
           <span class="icon-menu icon-suelename"></span>
           <span class="page">Suelename</span>
         </a>
       </li>
-      <li [routerLink]="['/jump']" routerLinkActive="active-route" (click)="toggleMenu()">
+      <li *ngIf="admin" [routerLink]="['/jump']" routerLinkActive="active-route" (click)="toggleMenu()">
         <a>
           <span class="icon-menu icon-jump"></span>
           <span class="page">Jump</span>
