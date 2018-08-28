@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewEncapsulation, ɵEMPTY_ARRAY } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
-import { User } from './providers/user';
+import { Admin } from './providers/user';
+import { UserService } from './providers/user.service';
 
 @Component({
   selector: 'maple-root',
@@ -13,24 +14,18 @@ import { User } from './providers/user';
 
 export class AppComponent implements OnInit {
 
-  // public users$: User;
   public users$: Observable<any[]>;
-  public use: Observable<User>;
-  public abc: Observable<any[]>;
+  admin: Admin;
 
-  constructor(db: AngularFirestore) {
-    this.users$ = db.collection('/users/').valueChanges(); // créer la valeur users pour la vue
-    console.log(this.users$);
+  constructor(db: AngularFirestore, public userService: UserService) {
+    this.users$ = db.collection('users/').valueChanges(); // créer la valeur users$ pour la vue et permet de boucler dedans
 
-    const test = db.collection('/users/').valueChanges(); // créer la valeur users pour la vue
-    console.log(test);
   }
 
   ngOnInit() {
-    const userMail = this.queryDatabase('users', 'email', '==', 'morganichoui@gmail.com');
-    const queryAdministrateur = this.queryDatabase('users', 'roles.admin', '==', true);
-    // this.isAdmin(administrateur);
-    console.log(this.isAdmin(queryAdministrateur));
+    const queryAdministrateur = this.queryDatabase('users', 'admin', '==', true);
+    this.isAdmin(queryAdministrateur);
+    this.userService.admin$.subscribe(user => this.admin = user);
 
     /*
         firebase.auth().onAuthStateChanged(user => {
@@ -55,7 +50,8 @@ export class AppComponent implements OnInit {
           for (let index = 0; index < value.length; index++)
             if (value[index].uid === user.uid) {
               console.log('L\'utilisateur connecté est administrateur');
-              return true;
+            } else {
+              console.log('L\'utilisateur n\'est pas administrateur');
             }
         });
       }
@@ -80,7 +76,7 @@ export class AppComponent implements OnInit {
       });
     } else {
       const query = myCollection.where(field, operator, value);
-      // const query = myCollection.where('email', '==', 'morganichoui@gmail.com');
+      // const query =  myCollection.where('email', '==', 'morganichoui@gmail.com');
       return query.get().then(value => {
         value.forEach(snap => {
           const data = snap.data();

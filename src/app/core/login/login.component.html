@@ -10,33 +10,27 @@
      <button href="#" class="btn" type="submit">Connexion</button>-->
 
     <!--SI NON CONNECTÉ -->
-    <ng-template #connected>
-    <h1>Connexion</h1>
-    <button class="btn google" href="#" (click)="loginGoogle()"><img src="/assets/images/google.png">Google</button>
+    <ng-template #connexion>
+      <h1>Connexion</h1>
+      <button class="btn google" href="#" (click)="loginGoogle()"><img src="/assets/images/google.png">Google</button>
 
-    <div class="back" [routerLink]="['/home']">
-      <span class="icon-home"></span>
-      <div class="back-msg">Home</div>
-    </div>
+      <div class="back" [routerLink]="['/home']">
+        <span class="icon-home"></span>
+        <div class="back-msg">Home</div>
+      </div>
     </ng-template>
+
     <!--SI CONNECTÉ-->
-    <div *ngIf="user; else connected">
-      <!--<div *ngIf="role"></div>-->
-      <h3>Vous êtes maintenant connecté !</h3>
+    <div *ngIf="user; else connexion">
+      <div *ngIf="admin; else noAdmin">Vous êtes maintenant connecté en tant qu'Administrateur !</div>
+      <ng-template #noAdmin><h3>Vous êtes maintenant connecté !</h3></ng-template>
       <div class="back" [routerLink]="['/home']">
         <span class="icon-home"></span>
         <div class="back-msg">Home</div>
       </div>
       <button class="btn logout" (click)="userService.logout()">Logout</button>
-
-      <div *ngIf="user">
-        <p>User {{user.roles?.user}}</p>
-        <p>admin : {{ user.roles?.admin}}</p>
-      </div>
     </div>
   </div>
-
-
 
 
 </div>

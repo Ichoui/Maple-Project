@@ -1,4 +1,4 @@
 <h1 class="title">Home</h1>
-<div class="welcome" *ngIf="userService.user |async as user">
+<div class="welcome" *ngIf="user">
   <span>Bonjour {{ user.displayName }} !</span>
 </div>

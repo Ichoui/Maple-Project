@@ -75,13 +75,20 @@ $width-menu-responsive: 425px;
       background-color: rgba(0, 0, 0, 0.3);
       color: white;
       margin-top: 5px;
+      span {
+        font-size: 1.1em !important;
+        padding: 0 5px ;
+      }
       .identity {
         margin-top: 5px;
-        font-size: 1.1em;
+        text-transform: uppercase;
+      }
+      .login {
+        margin-top: 5px;
+        cursor:pointer;
       }
       .signout {
         margin: 5px 0;
-        font-size: 1.1em !important;
         .icon-logout {
           margin-left: 5px;
           font-size: 1.1em !important;

@@ -8,6 +8,7 @@
       </div>
       <div id="content-logout" [@logoutMenu]='etat'>
         <span class="identity">{{ user.displayName }}</span>
+        <span class="login" [routerLink]="['/login']">Page de connexion</span>
         <span class="signout" title="Se déconnecter" (click)="userService.logout()"><span class="icon-logout"></span>Se déconnecter</span>
       </div>
     </div>

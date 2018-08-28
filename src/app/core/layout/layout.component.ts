@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../providers/user.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { User } from '../../providers/user';
+import { Admin, User } from '../../providers/user';
 import * as firebase from 'firebase';
 import { AppComponent } from '../../app.component';
 
@@ -26,8 +26,18 @@ import { AppComponent } from '../../app.component';
   ]
 })
 export class LayoutComponent implements OnInit {
+  user: User;
+  admin: Admin;
 
   constructor(public userService: UserService, public app: AppComponent) {
+    this.userService.user$.subscribe(user => this.user = user);
+    this.userService.admin$.subscribe(user => this.admin = user);
+  }
+
+  ngOnInit() {
+    // this.router.events.subscribe(console.log);
+    this.userService.user$.subscribe(user => this.user = user);
+    this.userService.admin$.subscribe(user => this.admin = user);
   }
 
   state: string = 'close'; // passer à close
@@ -61,19 +71,9 @@ export class LayoutComponent implements OnInit {
   }
 
   etat: string = 'close';
-
   toggleIdentity() {
     this.etat = (this.etat === 'open' ? 'close' : 'open');
   }
 
-  user: User;
-
-  ngOnInit() {
-    // this.router.events.subscribe(console.log);
-    // this.app.readDatabase('users');
-
-    this.userService.user$.subscribe(user => this.user = user);
-
-  }
 
 }
