@@ -76,5 +76,6 @@ export class UserService implements OnInit {
 
   logout() {
     this.afAuth.auth.signOut();
+    // faire une redirection quand possible
   }
 }
