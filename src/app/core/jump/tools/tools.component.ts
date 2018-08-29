@@ -27,7 +27,6 @@ export class ToolsComponent implements OnInit {
       this.jump = i;
       console.log(this.jump);
     });
-    console.log(this.jump);
   }
 
 

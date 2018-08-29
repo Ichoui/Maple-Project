@@ -12,7 +12,7 @@ export class JumpService {
   jumps$: Observable<any>;
 
   constructor(public afs: AngularFirestore) {
-    this.jumps$ = this.afs.collection('jump').doc('SAP').valueChanges();
+    this.jumps$ = this.afs.collection('jump').doc('Tools').valueChanges();
     // this.jumps$ = this.afs.collection('testee').doc('mytest').valueChanges();
 
   }

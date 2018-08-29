@@ -1,10 +1,7 @@
-
-<p>works</p>
-
-<ul>
-  <!--<li *ngFor="let leat of array">{{ leat[0][1][1] }}</li>-->
-</ul>
-
-<div *ngFor="let obj of jump | keyvalue">
-  {{obj.key}} :  {{obj.value.link }}
+<div class="content-outils">
+  <div *ngFor="let obj of jump | keyvalue" class="outils">
+    <!--<div class="key">{{obj.key}}</div>-->
+    <div class="name">{{obj.value.name}}</div>
+    <a href="http://{{obj.value.link}}" class="link">{{obj.value.link}}</a>
+  </div>
 </div>

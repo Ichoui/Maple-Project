@@ -1,17 +1,46 @@
 @import "../../../styles/stylefullpage";
 
 .jump-active {
-  color:$brand-darkred !important;
+  color: $brand-darkred !important;
 }
 
 .projects {
   padding-left: 0;
   .projet {
-    cursor:pointer;
+    cursor: pointer;
     display: inline;
     margin-left: 20px;
     font-size: 1.4em;
     color: $brand-bluegray;
+  }
+}
+
+.content-outils {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .outils {
+    margin-top: 20px;
+    min-width: 225px;
+    width: 15vw;
+    height: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    .name {
+      font-size: 1.1em;
+      text-transform: uppercase;
+    }
+    .link {
+      font-size: 0.8em;
+      color: $brand-bluegray;
+      &:hover {
+        cursor: pointer;
+        color: $brand-darkred;
+      }
+      &:visited, &:active {
+        color: $brand-bluegray;
+      }
+    }
   }
 }
 
