@@ -9,15 +9,13 @@ import {Observable} from "rxjs/index";
 export class JumpService {
 
   jumpCollec: AngularFirestoreCollection<Jump>;
-  jumps: Observable<Jump[]>;
+  jumps: Observable<any>;
 
   constructor(public afs: AngularFirestore) {
-    //TODO Le problème vient de cette assignation ... du coup on ne peut subscribe dans tools.component
-    // this.jumps = this.afs.collection('testee').valueChanges();
-
+    this.jumps = this.afs.collection('jump').doc('Tools').valueChanges();
   }
 
-  getItems() {
+  getItems(): Observable<Jump[]> {
     return this.jumps;
   }
 

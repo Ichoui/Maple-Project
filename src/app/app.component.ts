@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
-import { Admin } from './providers/user';
+import { Admin, User } from './providers/user';
 import { UserService } from './providers/user.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { UserService } from './providers/user.service';
 
 export class AppComponent implements OnInit {
 
-  public users$: Observable<any[]>;
+  public users$: Observable<any>;
   admin: Admin;
 
   constructor(db: AngularFirestore, public userService: UserService) {
