@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { AngularFirestore } from 'angularfire2/firestore';
 import { Jump } from './jump';
-import { Observable } from 'rxjs/index';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,8 @@ export class JumpService {
 
   constructor(public afs: AngularFirestore) {
     this.jumps$ = this.afs.collection('jump').doc('SAP').valueChanges();
+    // this.jumps$ = this.afs.collection('testee').doc('mytest').valueChanges();
+
   }
 
   getItems(): Observable<Jump[]> {
