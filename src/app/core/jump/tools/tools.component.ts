@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
-import { AngularFirestore } from 'angularfire2/firestore';
-import * as firebase from 'firebase';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { JumpService } from '../../../providers/jump/jump.service';
 import { Jump } from '../../../providers/jump/jump';
 
@@ -14,26 +11,24 @@ import { Jump } from '../../../providers/jump/jump';
 
 export class ToolsComponent implements OnInit {
 
-  // public jump$: Observable<Jump[]>;
   public jump: Jump[];
   public array = [];
 
-  constructor(public afs: AngularFirestore, private jumpService: JumpService) {
+  constructor(public jumpService: JumpService) {
+    // this.jumpService.jumps$.subscribe(i => {
+    //   this.jump = i;
+    // });
+
+    this.jumpService.getItems().subscribe(i => {
+      this.jump = i;
+      console.log(this.jump);
+    });
+
+    console.log(this.jump);
   }
 
 
   ngOnInit() {
-    this.jumpService.getItems().subscribe(i => {
-      this.jump = i;
-      console.log(i);
-      this.array = Array.of(Object.entries(this.jump));
-
-
-      // console.log(this.jump);
-      // this.array = Object.entries(this.jump);
-      console.log(this.array);
-    });
-
 
   }
 

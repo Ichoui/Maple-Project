@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   admin: Admin;
 
   constructor(db: AngularFirestore, public userService: UserService) {
-    this.users$ = db.collection('users/').valueChanges(); // créer la valeur users$ pour la vue et permet de boucler dedans
+    this.users$ = db.collection('users').valueChanges(); // créer la valeur users$ pour la vue et permet de boucler dedans
   }
 
   ngOnInit() {

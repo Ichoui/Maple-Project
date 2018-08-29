@@ -1,14 +1,10 @@
-<!--<ul *ngFor="let j of jump">-->
-  <!--<li>{{ j.database.name }}</li>-->
-  <!--&lt;!&ndash;<li>{{ jump.link }}</li>&ndash;&gt;-->
-<!--</ul>-->
 
-<!--<ul *ngFor="let a of item | async">-->
-  <!--<li>{{ a.database }}</li>-->
-<!--</ul>-->
 <p>works</p>
 
 <ul>
-  <li *ngFor="let leat of array">{{ leat[0][1][1] }}</li>
+  <!--<li *ngFor="let leat of array">{{ leat[0][1][1] }}</li>-->
 </ul>
 
+<div *ngFor="let obj of jump | keyvalue">
+  {{obj.key}} :  {{obj.link}}
+</div>

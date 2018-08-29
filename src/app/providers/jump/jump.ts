@@ -1,7 +1,7 @@
 export interface Jump {
-  monA:string;
-  monB:string;
-  // outils : Content;
+  // monA:string;
+  // monB:string;
+  outils : Content;
 }
 
 
