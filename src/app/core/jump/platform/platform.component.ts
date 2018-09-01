@@ -9,7 +9,7 @@ import {JumpService} from "../../../providers/jump/jump.service";
 })
 export class PlatformComponent implements OnInit {
 
-  public jump: Jump[];
+  public jump: Jump;
 
   constructor(public jumpService: JumpService) {
 
@@ -21,5 +21,4 @@ export class PlatformComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

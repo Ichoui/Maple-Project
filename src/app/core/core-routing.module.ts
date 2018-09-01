@@ -55,12 +55,12 @@ const routes: Routes = [
       {
         path: 'velib',
         component: VelibComponent
-      },
-      {
-        path: 'suelename',
-        component: SuelenameComponent
       }
     ]
+  },
+  {
+    path: 'suelename',
+    component: SuelenameComponent
   },
   {
     path: '**',

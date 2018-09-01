@@ -9,7 +9,7 @@ import {JumpService} from "../../../providers/jump/jump.service";
 })
 export class SapComponent implements OnInit {
 
-  public jump: Jump[];
+  public jump: Jump;
 
   constructor(public jumpService: JumpService) {
 

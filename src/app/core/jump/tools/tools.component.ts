@@ -11,7 +11,7 @@ import {Component, OnInit} from '@angular/core';
 
 export class ToolsComponent implements OnInit {
 
-  public jump: Jump[];
+  public jump: Jump;
 
   constructor(public jumpService: JumpService) {
 
@@ -21,9 +21,7 @@ export class ToolsComponent implements OnInit {
     });
   }
 
-
   ngOnInit() {
 
   }
-
 }
