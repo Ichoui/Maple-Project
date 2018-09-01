@@ -1,6 +1,6 @@
-import { JumpService } from '../../../providers/jump/jump.service';
-import { Jump } from '../../../providers/jump/jump';
-import { Component, OnInit } from '@angular/core';
+import {JumpService} from '../../../providers/jump/jump.service';
+import {Jump} from '../../../providers/jump/jump';
+import {Component, OnInit} from '@angular/core';
 
 
 @Component({
@@ -12,18 +12,10 @@ import { Component, OnInit } from '@angular/core';
 export class ToolsComponent implements OnInit {
 
   public jump: Jump[];
-  public array = [];
-
-  testObject: { [key: number]: string } =
-    {
-      1: 'Object Value 1',
-      2: 'Object Value 2',
-      3: 'Object Value 3'
-    };
 
   constructor(public jumpService: JumpService) {
 
-    this.jumpService.getItems().subscribe(i => {
+    this.jumpService.getTools().subscribe(i => {
       this.jump = i;
       console.log(this.jump);
     });

@@ -1,7 +1,7 @@
-import { AngularFirestore } from 'angularfire2/firestore';
-import { Jump } from './jump';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
+import {Jump} from './jump';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs/internal/Observable';
 
 
 @Injectable({
@@ -9,16 +9,30 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class JumpService {
 
+  jumpCollec: AngularFirestoreDocument<Jump>;
   jumps$: Observable<any>;
 
   constructor(public afs: AngularFirestore) {
-    this.jumps$ = this.afs.collection('jump').doc('Tools').valueChanges();
-    // this.jumps$ = this.afs.collection('testee').doc('mytest').valueChanges();
-
   }
 
-  getItems(): Observable<Jump[]> {
-    return this.jumps$;
+  getTools() {
+    this.jumpCollec = this.afs.collection('jump').doc('Tools');
+    return this.jumps$ = this.jumpCollec.valueChanges();
+  }
+
+  getSap() {
+    this.jumpCollec = this.afs.collection('jump').doc('SAP');
+    return this.jumps$ = this.jumpCollec.valueChanges();
+  }
+
+  getDci() {
+    this.jumpCollec = this.afs.collection('jump').doc('DCI');
+    return this.jumps$ = this.jumpCollec.valueChanges();
+  }
+
+  getPlatform() {
+    this.jumpCollec = this.afs.collection('jump').doc('Platform');
+    return this.jumps$ = this.jumpCollec.valueChanges();
   }
 }
 
