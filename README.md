@@ -27,4 +27,9 @@ C. `firebase init` avec le hosting et database, <br>
 
 D. `firebase deploy` <br>
 
+#Kill port 4200
+
+- netstat -a -o -n<br>
+- Chercher le PID de 127.0.0.1:4200
+- taskkill /F /PID *monPid*
 

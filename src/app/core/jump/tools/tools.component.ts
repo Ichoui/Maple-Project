@@ -17,7 +17,7 @@ export class ToolsComponent implements OnInit {
 
     this.jumpService.getTools().subscribe(i => {
       this.jump = i;
-      console.log(this.jump);
+      // console.log(this.jump);
     });
   }
 

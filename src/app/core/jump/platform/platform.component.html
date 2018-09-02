@@ -2,6 +2,6 @@
   <div *ngFor="let obj of jump | keyvalue" class="outils">
     <!--<div class="key">{{obj.key}}</div>-->
     <div class="name">{{obj.value.name}}</div>
-    <a href="http://{{obj.value.link}}" class="link">{{obj.value.link}}</a>
+    <a href="{{obj.value.link}}" class="link">{{obj.value.link}}</a>
   </div>
 </div>
