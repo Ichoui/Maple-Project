@@ -34,6 +34,11 @@ export class JumpService {
     this.jumpCollec = this.afs.collection('jump').doc('Platform');
     return this.jumps$ = this.jumpCollec.valueChanges();
   }
+
+  getAllianz() {
+    this.jumpCollec = this.afs.collection('jump').doc('Allianz');
+    return this.jumps$ = this.jumpCollec.valueChanges();
+  }
 }
 
 

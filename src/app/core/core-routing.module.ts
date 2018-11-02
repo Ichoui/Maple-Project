@@ -11,6 +11,7 @@ import { ToolsComponent } from './jump/tools/tools.component';
 import { SapComponent } from './jump/sap/sap.component';
 import { DciComponent } from './jump/dci/dci.component';
 import { PlatformComponent } from './jump/platform/platform.component';
+import { AllianzComponent } from './jump/allianz/allianz.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,10 @@ const routes: Routes = [
           {
             path:'platform',
             component: PlatformComponent
+          },
+          {
+            path:'allianz',
+            component: AllianzComponent
           }
         ]
       },

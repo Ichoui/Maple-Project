@@ -6,6 +6,7 @@ import * as firebase from 'firebase';
 import { Admin, User } from './user';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { switchMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable()
 
@@ -14,7 +15,7 @@ export class UserService implements OnInit {
   user$: Observable<User>;
   admin$: Observable<Admin>;
 
-  constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore) {
+  constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore, public router: Router) {
     this.user$ = afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
@@ -76,6 +77,7 @@ export class UserService implements OnInit {
 
   logout() {
     this.afAuth.auth.signOut();
+    this.router.navigate(['/allianz'])
     // faire une redirection quand possible
   }
 }
