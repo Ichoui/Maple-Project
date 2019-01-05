@@ -2,14 +2,10 @@
   "name": "maple",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "build Prod": "ng build --prod",
-    "firebase_deploy": "ng build --prod && firebase deploy",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "ng serve --host 0.0.0.0 --open",
+    "build": "ng build --prod",
+    "firebase": "firebase deploy",
+    "deploy": "ng build --prod && firebase deploy"
   },
   "private": true,
   "dependencies": {

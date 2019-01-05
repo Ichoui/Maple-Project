@@ -71,6 +71,7 @@ export class UserService implements OnInit {
       photoURL: user.photoURL,
     };
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`administrateurs/${user.displayName}`);
+    console.log(userRef);
     return userRef.set(data, {merge: true});
   }
 
