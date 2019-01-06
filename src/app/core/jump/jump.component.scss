@@ -44,3 +44,9 @@
   }
 }
 
+.colored {
+color: $brand-darkred;
+  &:hover {
+    cursor:pointer;
+  }
+}

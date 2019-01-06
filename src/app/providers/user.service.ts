@@ -78,7 +78,7 @@ export class UserService implements OnInit {
 
   logout() {
     this.afAuth.auth.signOut();
-    this.router.navigate(['/allianz'])
+    this.router.navigate(['/login']);
     // faire une redirection quand possible
   }
 }
