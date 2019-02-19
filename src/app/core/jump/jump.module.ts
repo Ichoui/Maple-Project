@@ -7,6 +7,7 @@ import { SapComponent } from './sap/sap.component';
 import { DciComponent } from './dci/dci.component';
 import { PlatformComponent } from './platform/platform.component';
 import { AllianzComponent } from './allianz/allianz.component';
+import { AnieComponent } from './anie/anie.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { AllianzComponent } from './allianz/allianz.component';
     CoreRoutingModule,
     SharedModule.forRoot()
   ],
-  declarations: [ToolsComponent, SapComponent, DciComponent, PlatformComponent, AllianzComponent]
+  declarations: [ToolsComponent, SapComponent, DciComponent, PlatformComponent, AllianzComponent, AnieComponent]
 })
 export class JumpModule { }
