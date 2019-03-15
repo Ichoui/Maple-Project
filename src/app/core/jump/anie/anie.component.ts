@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {JumpService} from "../../../providers/jump/jump.service";
 import {Jump} from "../../../providers/jump/jump";
 
