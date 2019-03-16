@@ -12,6 +12,10 @@
 <div class="content">
   <router-outlet></router-outlet>
 </div>
+<ng-template #notAdmin>
+  <h1 class="title">Vous n'êtes pas connecté.</h1>
+  <p>Rendez-vous sur <span class='colored' [routerLink]="['/login']">cette page</span> et connectez-vous avec un compte administrateur si vous souhaitez accéder à cette page.</p>
+</ng-template>
 
 <div class="jump-img">
   <a href="https://www.groupe-bizness.com/jump-usine-digitale/">
