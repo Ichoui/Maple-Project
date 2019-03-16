@@ -1,18 +1,20 @@
 <div *ngIf="admin; else notAdmin">
 <h1 class="title">Jump Projects</h1>
-  <ul class="projects">
-    <li class="projet" [routerLink]="['/jump/tools']" routerLinkActive="jump-active">Tools</li>
-    <li class="projet" [routerLink]="['/jump/sap']" routerLinkActive="jump-active">SAP</li>
-    <li class="projet" [routerLink]="['/jump/dci']" routerLinkActive="jump-active">DCI</li>
-    <li class="projet" [routerLink]="['/jump/platform']" routerLinkActive="jump-active">Platform</li>
-    <li class="projet" [routerLink]="['/jump/allianz']" routerLinkActive="jump-active">Allianz</li>
-  </ul>
-  <div class="content">
-    <router-outlet></router-outlet>
-  </div>
 </div>
-<ng-template #notAdmin>
-  <h1 class="title">Vous n'êtes pas connecté.</h1>
-  <p>Rendez-vous sur <span class='colored' [routerLink]="['/login']">cette page</span> et connectez-vous avec un compte administrateur si vous souhaitez accéder à cette page.</p>
-</ng-template>
+<ul class="projects">
+  <li class="projet" [routerLink]="['/jump/tools']" routerLinkActive="jump-active">Tools</li>
+  <li class="projet" [routerLink]="['/jump/sap']" routerLinkActive="jump-active">SAP</li>
+  <li class="projet" [routerLink]="['/jump/dci']" routerLinkActive="jump-active">DCI</li>
+  <li class="projet" [routerLink]="['/jump/platform']" routerLinkActive="jump-active">Platform</li>
+  <li class="projet" [routerLink]="['/jump/allianz']" routerLinkActive="jump-active">Allianz</li>
+  <li class="projet" [routerLink]="['/jump/anie']" routerLinkActive="jump-active">Anie</li>
+</ul>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
 
+<div class="jump-img">
+  <a href="https://www.groupe-bizness.com/jump-usine-digitale/">
+  <img src="assets/images/logo-jump.png" alt="Logo JUMP">
+  </a>
+</div>

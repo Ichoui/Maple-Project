@@ -6,6 +6,7 @@
 
 .projects {
   padding-left: 0;
+
   .projet {
     cursor: pointer;
     display: inline;
@@ -19,6 +20,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
   .outils {
     margin-top: 20px;
     min-width: 225px;
@@ -26,17 +28,21 @@
     height: 90px;
     overflow: hidden;
     text-overflow: ellipsis;
+
     .name {
       font-size: 1.1em;
       text-transform: uppercase;
     }
+
     .link {
       font-size: 0.8em;
       color: $brand-bluegray;
+
       &:hover {
         cursor: pointer;
         color: $brand-darkred;
       }
+
       &:visited, &:active {
         color: $brand-bluegray;
       }
@@ -45,8 +51,14 @@
 }
 
 .colored {
-color: $brand-darkred;
-  &:hover {
-    cursor:pointer;
-  }
+  color: $brand-darkred;
+  cursor: pointer;
+}
+
+.jump-img img {
+  position: absolute;
+  width: 150px;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
 }

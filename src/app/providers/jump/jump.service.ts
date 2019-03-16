@@ -1,7 +1,7 @@
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {Jump} from './jump';
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/internal/Observable';
+import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { Jump } from './jump';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 
 
 @Injectable({
@@ -37,6 +37,11 @@ export class JumpService {
 
   getAllianz() {
     this.jumpCollec = this.afs.collection('jump').doc('Allianz');
+    return this.jumps$ = this.jumpCollec.valueChanges();
+  }
+
+  getAnie() {
+    this.jumpCollec = this.afs.collection('jump').doc('Anie');
     return this.jumps$ = this.jumpCollec.valueChanges();
   }
 }

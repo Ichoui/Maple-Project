@@ -37,12 +37,6 @@
           <span class="page">Accueil</span>
         </a>
       </li>
-      <li *ngIf="admin" [routerLink]="['/suelename']" routerLinkActive="active-route" (click)="toggleMenu()">
-        <a>
-          <span class="icon-menu icon-suelename"></span>
-          <span class="page">Suelename</span>
-        </a>
-      </li>
       <li *ngIf="admin" [routerLink]="['/jump/tools']" routerLinkActive="active-route" (click)="toggleMenu()">
         <a>
           <span class="icon-menu icon-jump"></span>

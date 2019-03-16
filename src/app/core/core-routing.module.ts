@@ -12,6 +12,7 @@ import { SapComponent } from './jump/sap/sap.component';
 import { DciComponent } from './jump/dci/dci.component';
 import { PlatformComponent } from './jump/platform/platform.component';
 import { AllianzComponent } from './jump/allianz/allianz.component';
+import {AnieComponent} from "./jump/anie/anie.component";
 
 const routes: Routes = [
   {
@@ -54,6 +55,10 @@ const routes: Routes = [
           {
             path:'allianz',
             component: AllianzComponent
+          },
+          {
+            path:'anie',
+            component: AnieComponent
           }
         ]
       },
