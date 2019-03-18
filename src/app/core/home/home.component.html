@@ -1,12 +1,18 @@
 <h1 class="title">Accueil</h1>
 <div class="welcome" *ngIf="user">
-  <span>Bonjour {{ user.displayName }} !</span>
+  <span class="message">Bonjour {{ user.displayName }} !</span>
 </div>
 
 <div class="welcome">
   <p>Mes projets persos :</p>
   <ul class="list-projects">
-    <li *ngFor="let projet of projects$ | keyvalue" ><a href="{{projet.value.link}}" target="_blank">{{projet.value.name}}</a></li>
+    <li *ngFor="let projet of projects$ | keyvalue" >
+      <a href="{{projet.value.link}}" target="_blank">
+        <span *ngIf="projet.value.available == 1" class="icons icon-available" title="Disponible"> </span>
+        <span *ngIf="projet.value.available == 0" class="icons icon-not-available" title="Indisponible"> </span>
+       <span class="label-project">{{projet.value.name}}</span>
+      </a>
+    </li>
 
   </ul>
 </div>

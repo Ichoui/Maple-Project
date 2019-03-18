@@ -13,6 +13,11 @@ import { DciComponent } from './jump/dci/dci.component';
 import { PlatformComponent } from './jump/platform/platform.component';
 import { AllianzComponent } from './jump/allianz/allianz.component';
 import {AnieComponent} from "./jump/anie/anie.component";
+import {CurriculumComponent} from "./curriculum/curriculum.component";
+import {ProfilComponent} from "./curriculum/profil/profil.component";
+import {FormationsComponent} from "./curriculum/formations/formations.component";
+import {ExperiencesComponent} from "./curriculum/experiences/experiences.component";
+import {LoisirsComponent} from "./curriculum/loisirs/loisirs.component";
 
 const routes: Routes = [
   {
@@ -65,6 +70,28 @@ const routes: Routes = [
       {
         path: 'velib',
         component: VelibComponent
+      },
+      {
+        path: 'curriculum',
+        component: CurriculumComponent,
+        children: [
+          {
+            path: 'profil',
+            component: ProfilComponent
+          },
+          {
+            path: 'formations',
+            component: FormationsComponent
+          },
+          {
+            path: 'experiences',
+            component: ExperiencesComponent
+          },
+          {
+            path: 'loisirs',
+            component: LoisirsComponent
+          }
+        ]
       }
     ]
   },

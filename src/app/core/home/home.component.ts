@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../providers/user.service';
 import {User} from '../../providers/user';
 import {JumpService} from "../../providers/jump/jump.service";
-import {Jump} from "../../providers/jump/jump";
+import {Project} from "../../providers/jump/projects";
 
 @Component({
   selector: 'maple-home',
@@ -13,7 +13,7 @@ import {Jump} from "../../providers/jump/jump";
 export class HomeComponent implements OnInit {
 
   user: User;
-  public projects$: Jump;
+  projects$: Project;
 
   constructor(public userService: UserService,
               public jumpService: JumpService) {

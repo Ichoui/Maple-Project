@@ -1,0 +1,18 @@
+@import "../../../styles/shared";
+
+
+.the-switcher {
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  ul {
+    display: flex;
+    li {
+      margin:0 5px;
+      border-bottom: 2px solid black;
+      width: 15px;
+      height: 5px;
+    }
+  }
+}

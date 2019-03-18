@@ -2,6 +2,7 @@ import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firesto
 import { Jump } from './jump';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import {Project} from "./projects";
 
 
 @Injectable({
@@ -9,40 +10,42 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class JumpService {
 
-  jumpCollec: AngularFirestoreDocument<Jump>;
+  JumpCollections: AngularFirestoreDocument<Jump>;
+  ProjectCollections: AngularFirestoreDocument<Project>;
   jumps$: Observable<any>;
+  projects$: Observable<any>;
 
   constructor(public afs: AngularFirestore) {
   }
 
   getTools() {
-    this.jumpCollec = this.afs.collection('jump').doc('Tools');
-    return this.jumps$ = this.jumpCollec.valueChanges();
+    this.JumpCollections = this.afs.collection('jump').doc('Tools');
+    return this.jumps$ = this.JumpCollections.valueChanges();
   }
 
   getSap() {
-    this.jumpCollec = this.afs.collection('jump').doc('SAP');
-    return this.jumps$ = this.jumpCollec.valueChanges();
+    this.JumpCollections = this.afs.collection('jump').doc('SAP');
+    return this.jumps$ = this.JumpCollections.valueChanges();
   }
 
   getDci() {
-    this.jumpCollec = this.afs.collection('jump').doc('DCI');
-    return this.jumps$ = this.jumpCollec.valueChanges();
+    this.JumpCollections = this.afs.collection('jump').doc('DCI');
+    return this.jumps$ = this.JumpCollections.valueChanges();
   }
 
   getPlatform() {
-    this.jumpCollec = this.afs.collection('jump').doc('Platform');
-    return this.jumps$ = this.jumpCollec.valueChanges();
+    this.JumpCollections = this.afs.collection('jump').doc('Platform');
+    return this.jumps$ = this.JumpCollections.valueChanges();
   }
 
   getAllianz() {
-    this.jumpCollec = this.afs.collection('jump').doc('Allianz');
-    return this.jumps$ = this.jumpCollec.valueChanges();
+    this.JumpCollections = this.afs.collection('jump').doc('Allianz');
+    return this.jumps$ = this.JumpCollections.valueChanges();
   }
 
   getAnie() {
-    this.jumpCollec = this.afs.collection('jump').doc('Anie');
-    return this.jumps$ = this.jumpCollec.valueChanges();
+    this.JumpCollections = this.afs.collection('jump').doc('Anie');
+    return this.jumps$ = this.JumpCollections.valueChanges();
   }
 
   ////////////////////////////////////////
@@ -50,8 +53,8 @@ export class JumpService {
   ////////////////////////////////////////
 
   getProjectsPerso() {
-    this.jumpCollec = this.afs.collection('projects').doc('perso');
-    return this.jumps$ = this.jumpCollec.valueChanges();
+    this.ProjectCollections = this.afs.collection('projects').doc('perso');
+    return this.projects$ = this.ProjectCollections.valueChanges();
   }
 
 }

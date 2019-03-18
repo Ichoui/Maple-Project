@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurriculumComponent implements OnInit {
 
+  profilSwitch = true;
+  experiencesSwitch = false;
+  formationsSwitch = false;
+  loisirsSwitch = false;
+
   constructor() { }
 
   ngOnInit() {

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'maple-icomoon';
-  src:  url('fonts/maple-icomoon.eot?30ino7');
-  src:  url('fonts/maple-icomoon.eot?30ino7#iefix') format('embedded-opentype'),
-    url('fonts/maple-icomoon.ttf?30ino7') format('truetype'),
-    url('fonts/maple-icomoon.woff?30ino7') format('woff'),
-    url('fonts/maple-icomoon.svg?30ino7#maple-icomoon') format('svg');
+  src:  url('fonts/maple-icomoon.eot?imeyj7');
+  src:  url('fonts/maple-icomoon.eot?imeyj7#iefix') format('embedded-opentype'),
+    url('fonts/maple-icomoon.ttf?imeyj7') format('truetype'),
+    url('fonts/maple-icomoon.woff?imeyj7') format('woff'),
+    url('fonts/maple-icomoon.svg?imeyj7#maple-icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-login:before {
+  content: "\e909";
+}
+.icon-not-available:before {
+  content: "\e908";
+}
+.icon-available:before {
+  content: "\e903";
+}
+.icon-jump:before {
+  content: "\e904";
+}
+.icon-home:before {
+  content: "\e905";
+}
+.icon-logout:before {
+  content: "\e906";
+}
+.icon-suelename:before {
+  content: "\e907";
+}
+.icon-cv:before {
+  content: "\e902";
+}
 .icon-cancel:before {
   content: "\e900";
 }
