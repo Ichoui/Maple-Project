@@ -1,5 +1,8 @@
 @import "../../../styles/shared";
 
+.section-cv {
+
+}
 
 .the-switcher {
   position: absolute;
@@ -8,11 +11,21 @@
   left: 50%;
   ul {
     display: flex;
+    justify-content: space-evenly;
+    width: 180px;
+    padding: 0;
     li {
-      margin:0 5px;
-      border-bottom: 2px solid black;
-      width: 15px;
-      height: 5px;
+      transition: all linear .4s;
+      border-bottom: .25rem solid black;
+      width: 25px;
+      cursor:pointer;
+      &:hover {
+        transform: scale(1.2);
+        border-color: $brand-darkred;
+      }
+    }
+    li.active {
+        border-color: $brand-darkred;
     }
   }
 }

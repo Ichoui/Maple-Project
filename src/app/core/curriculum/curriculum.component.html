@@ -1,15 +1,12 @@
-<h1>Curriculum Vitae</h1>
-<div class="looking-for-a-job-title">Développeur Front / Intégrateur</div>
-<maple-profil *ngIf="profilSwitch"></maple-profil>
-<maple-formations *ngIf="formationsSwitch"></maple-formations>
-<maple-experiences *ngIf="experiencesSwitch"></maple-experiences>
-<maple-loisirs *ngIf="loisirsSwitch"></maple-loisirs>
+<h1>Curriculum Vitæ</h1>
+<h3 class="looking-for-a-job-title">Développeur Front / Intégrateur</h3>
+<router-outlet></router-outlet>
 
 <div class="the-switcher">
   <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li [routerLink]="['/curriculum/profil']" routerLinkActive="active" title="Profil"></li>
+    <li [routerLink]="['/curriculum/formations']" routerLinkActive="active" title="Formations"></li>
+    <li [routerLink]="['/curriculum/experiences']" routerLinkActive="active" title="Experiences"></li>
+    <li [routerLink]="['/curriculum/loisirs']" routerLinkActive="active" title="Loisirs"></li>
   </ul>
 </div>
