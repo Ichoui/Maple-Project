@@ -54,7 +54,7 @@ export class LayoutComponent implements OnInit {
       burger.classList.add('is-active');
       burgertext.classList.add('extend-burger');
       header.classList.add('shadw');
-      burgertext.innerHTML = 'CLOSE';
+      burgertext.innerHTML = 'FERMER';
       login ? login.style.pointerEvents = 'none' : 'none';
       logout ? logout.style.pointerEvents = 'none' : 'none';
 
