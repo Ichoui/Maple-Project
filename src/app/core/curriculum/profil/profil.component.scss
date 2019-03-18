@@ -1,0 +1,49 @@
+@import "../../../../styles/shared";
+
+.section-cv {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 15px;
+  .left {
+    width: 30%;
+    img {
+      width: 130px;
+      border-radius: 50%;
+    }
+  }
+  .right {
+    width: 70%;
+    text-align: left;
+    .identity-name {
+      font-size: 1.4em;
+      color: $brand-darkred;
+    }
+    .identity-description {
+
+    }
+    ul.identity-infos {
+      padding-left: 0;
+      .phone {
+        &:before {
+          content: "\e90a";
+        }
+      }
+      .mail {
+        &:before {
+          content: "\e90c";
+        }
+      }
+      .address {
+        &:before {
+          content: "\e90d";
+        }
+      }
+      .licence {
+        &:before {
+          content: "\e90b";
+        }
+      }
+    }
+  }
+}
