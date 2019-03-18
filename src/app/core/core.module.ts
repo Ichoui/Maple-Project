@@ -11,6 +11,7 @@ import { SuelenameComponent } from './suelename/suelename.component';
 import { SharedModule } from '../shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { JumpModule } from './jump/jump.module';
+import { CurriculumComponent } from './curriculum/curriculum.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { JumpModule } from './jump/jump.module';
   exports: [
     CoreRoutingModule
   ],
-  declarations: [HomeComponent, LayoutComponent, JumpComponent, VelibComponent, NotfoundComponent, SuelenameComponent, LoginComponent]
+  declarations: [HomeComponent, LayoutComponent, JumpComponent, VelibComponent, NotfoundComponent, SuelenameComponent, LoginComponent, CurriculumComponent]
 })
 export class CoreModule { }

@@ -44,6 +44,16 @@ export class JumpService {
     this.jumpCollec = this.afs.collection('jump').doc('Anie');
     return this.jumps$ = this.jumpCollec.valueChanges();
   }
+
+  ////////////////////////////////////////
+  ////////////// GET PROJECTS ////////////
+  ////////////////////////////////////////
+
+  getProjectsPerso() {
+    this.jumpCollec = this.afs.collection('projects').doc('perso');
+    return this.jumps$ = this.jumpCollec.valueChanges();
+  }
+
 }
 
 

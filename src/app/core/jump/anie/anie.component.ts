@@ -9,12 +9,11 @@ import {Jump} from "../../../providers/jump/jump";
 })
 export class AnieComponent implements OnInit {
 
-  public jump: Jump;
+  public jump$: Jump;
 
   constructor(public jumpService: JumpService) {
     this.jumpService.getAnie().subscribe(i => {
-      this.jump = i;
-      console.log(this.jump);
+      this.jump$ = i;
     });
   }
 

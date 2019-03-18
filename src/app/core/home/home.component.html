@@ -6,10 +6,8 @@
 <div class="welcome">
   <p>Mes projets persos :</p>
   <ul class="list-projects">
-    <li><a href="https://api.ichoui.fr" target="_blank">API Images</a></li>
-    <li><a href="https://album.ichoui.fr" target="_blank">Albums photos</a></li>
-    <li><a href="http://rdr2.ichoui.fr" target="_blank">Red Dead Redemption 2 - Map</a></li>
-    <li><a href="https://suelename-project.firebaseapp.com" target="_blank">Suelename.com</a></li>
+    <li *ngFor="let projet of projects$ | keyvalue" ><a href="{{projet.value.link}}" target="_blank">{{projet.value.name}}</a></li>
+
   </ul>
 </div>
 

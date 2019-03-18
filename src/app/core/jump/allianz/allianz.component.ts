@@ -9,12 +9,11 @@ import { JumpService } from '../../../providers/jump/jump.service';
 })
 export class AllianzComponent implements OnInit {
 
-  public jump: Jump;
+  public jump$: Jump;
 
   constructor(public jumpService: JumpService) {
     this.jumpService.getAllianz().subscribe(i => {
-      this.jump = i;
-      console.log(this.jump);
+      this.jump$ = i;
     });
   }
 

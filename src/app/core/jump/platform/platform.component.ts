@@ -9,13 +9,12 @@ import {JumpService} from "../../../providers/jump/jump.service";
 })
 export class PlatformComponent implements OnInit {
 
-  public jump: Jump;
+  public jump$: Jump;
 
   constructor(public jumpService: JumpService) {
 
     this.jumpService.getPlatform().subscribe(i => {
-      this.jump = i;
-      console.log(this.jump);
+      this.jump$ = i;
     });
   }
 

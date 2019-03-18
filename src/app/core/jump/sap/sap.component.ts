@@ -9,13 +9,12 @@ import {JumpService} from "../../../providers/jump/jump.service";
 })
 export class SapComponent implements OnInit {
 
-  public jump: Jump;
+  public jump$: Jump;
 
   constructor(public jumpService: JumpService) {
 
     this.jumpService.getSap().subscribe(i => {
-      this.jump = i;
-      console.log(this.jump);
+      this.jump$ = i;
     });
   }
 
