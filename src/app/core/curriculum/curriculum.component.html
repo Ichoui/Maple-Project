@@ -1,8 +1,14 @@
-<h1>Curriculum Vitæ</h1>
-<h3 class="looking-for-a-job-title">Développeur Front / Intégrateur</h3>
+<!--<h1>Curriculum Vitæ</h1>-->
+<!--<h3 class="looking-for-a-job-title">Développeur Front / Intégrateur</h3>-->
 <router-outlet></router-outlet>
 
+
 <div class="the-switcher">
+  <div id="arrow-indicate">
+    <div class="message-indicate"><span>Clique pour</span><span>naviguer !</span></div>
+    <!--<div class="message-indicate"></div>-->
+    <span class="icon-indicate"></span>
+  </div>
   <ul>
     <li [routerLink]="['/curriculum/profil']" routerLinkActive="active" title="Profil"></li>
     <li [routerLink]="['/curriculum/formations']" routerLinkActive="active" title="Formations"></li>

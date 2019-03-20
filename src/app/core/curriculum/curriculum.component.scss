@@ -1,27 +1,64 @@
 @import "../../../styles/shared";
 
+// Naviguer d'une partie à une autre
+
 .the-switcher {
   position: absolute;
   bottom: 0;
   transform: translateX(-50%);
   left: 50%;
+  width: 100%;
+
+  #arrow-indicate {
+    position: relative;
+    height: 70px;
+    visibility: visible;
+    opacity: 1.0;
+    transition: opacity 2s linear;
+    .message-indicate {
+      position: absolute;
+      left: 58%;
+      bottom: 38px;
+      span {
+      font-size: .8em;
+        display: block;
+      }
+      span:last-child {
+
+      }
+    }
+    .icon-indicate {
+      position: absolute;
+      left: 58.5%;
+      transform: scaleX(-1);
+      font-size: 2em;
+      bottom: 3px;
+    }
+  }
+  .hideur {
+    visibility: hidden !important;
+    opacity: 0.0 !important;
+    transition: visibility 0s 1s, opacity 1s linear !important;
+  }
+
   ul {
     display: flex;
     justify-content: space-evenly;
     width: 180px;
     padding: 0;
+    margin: 0 auto 1rem;
     li {
       transition: all linear .4s;
       border-bottom: .25rem solid black;
       width: 25px;
-      cursor:pointer;
+      cursor: pointer;
       &:hover {
         transform: scale(1.2);
         border-color: $brand-darkred;
       }
     }
     li.active {
-        border-color: $brand-darkred;
+      border-color: $brand-darkred;
     }
   }
 }

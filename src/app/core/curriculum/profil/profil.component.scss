@@ -24,25 +24,38 @@
     }
     ul.identity-infos {
       padding-left: 0;
-      .phone {
+      li {
+        position: relative;
+        overflow: hidden;
+        padding-left: 25px;
         &:before {
-          content: "\e90a";
+          position: absolute;
+          color: $brand-darkred;
+          transition: all ease-out .2s;
+          font-family: 'maple-icomoon', sans-serif;
+          left: 0;
+        }
+        &:hover {
+          &:before {
+            font-size: 1.1em;
+          }
         }
       }
-      .mail {
-        &:before {
-          content: "\e90c";
-        }
+
+      .phone:before {
+        content: "\e90a";
+
       }
-      .address {
-        &:before {
-          content: "\e90d";
-        }
+      .mail:before {
+        content: "\e90c";
+
       }
-      .licence {
-        &:before {
-          content: "\e90b";
-        }
+      .address:before {
+        content: "\e90d";
+
+      }
+      .licence:before {
+        content: "\e90b";
       }
     }
   }

@@ -11,6 +11,8 @@ export class CurriculumComponent implements OnInit {
   }
 
   ngOnInit() {
+    setTimeout(() =>{
+      document.getElementById('arrow-indicate').classList.add('hideur');
+    },8000)
   }
-
 }
